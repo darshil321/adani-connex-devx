@@ -165,9 +165,10 @@ body {
 
 .testimonial-section {
     position: relative;
-    width: 86vw;
-    margin-left: 10vw !important;
-    margin: auto;
+    /* width: 86vw; */
+    margin-left: 14.4vw;
+    margin-right: 10.2vw;
+    /* margin: auto; */
     padding: 3px;
     background: #ffffff;
     border-radius: 35px;
@@ -269,7 +270,7 @@ body {
     line-height: normal
 }
 
-@media (max-width: 320px) {
+@media (max-width: 768px) {
 
     #testimonial-header {
         padding-top: 10px;
@@ -288,6 +289,7 @@ body {
         width: auto;
         margin-left: 0 !important;
         align-items: center;
+        margin: auto;
     }
 
     .testimonial-image {
@@ -355,11 +357,9 @@ body {
     }
 
     .name-title .title {
-
         font-size: 10.64px;
         font-weight: 400;
         line-height: 9.76px;
         text-align: left;
-
     }
 }
