@@ -65,16 +65,17 @@
             <span class="dot"></span>
             <span class="dot"></span>
         </div>
-        <div class="carousel-controls-mb">
-            <button class="control-left">‹</button>
-            <button class="control-right">›</button>
-        </div>
     </div>
+
 
     <script>
         var caraousal = document.getElementsByClassName('carousel')[0];
-
+        var clientWidth = caraousal.clientWidth;
+        var currWidth = caraousal.scrollLeft + clientWidth;
         var caraousalWidth = caraousal.scrollWidth;
+
+        var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 430 - 40 - 40)/4; // 405 is the width of the card and some padding, 40 is the margin from both sides, 40 is the gap between cards // TEMP_FIX
+
         var dots = document.getElementsByClassName('dot');
         for (var i = 0; i < dots.length; i++) {
             var currentDot = dots[i];
@@ -82,6 +83,9 @@
 
             currentDot.addEventListener('click', function (ele) {
                 var dotPosition = 0;
+                var caraousalWidth = caraousal.scrollWidth;
+                var clientWidth = caraousal.clientWidth;
+                var currWidth = caraousal.scrollLeft + clientWidth;
 
                 parseInt(ele.srcElement.classList.forEach((className) => {
                     if (!isNaN(parseInt(className))) {
@@ -89,9 +93,16 @@
                     }
                 }));
 
-                var scrolledBy = (caraousalWidth / dots.length) * dotPosition;
+                var scrolledBy = scrollByPixel * dotPosition;
 
-                caraousal.scrollBy(scrolledBy, 0);
+                for (var j = 0; j < dots.length; j++) {
+                    dots[j].classList.remove('active');
+                }
+
+                ele.target.classList.add('active');
+
+                caraousal.scrollTo(scrolledBy, 0);
+
             });
         }
     </script>

@@ -1,10 +1,13 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
 }
 
 .pioneering-safety-section {
     max-width: 1200px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 20px;
     text-align: left;
 }
@@ -15,7 +18,7 @@ body {
     font-weight: 400;
     line-height: 45px;
     text-align: left;
-
+    margin: 0px;
 }
 
 .pioneering-safety-section p {
@@ -68,7 +71,8 @@ body {
 .card-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 1vh;
     text-align: left;
     height: 100%;
 }
@@ -76,21 +80,20 @@ body {
 
 .card-content h3 {
     color: #333;
-    margin: 10px 0 5px 0;
     font-size: 15px;
     font-weight: 700;
     line-height: 21px;
     text-align: left;
-
+    margin: 0px;
 }
 
 .card-content p {
     color: #666;
-    margin-bottom: 15px;
     font-size: 15px;
     font-weight: 400;
     line-height: 21px;
     text-align: left;
+    margin: 0px;
 }
 
 .card-content span {
@@ -99,18 +102,19 @@ body {
     line-height: 21px;
     text-align: left;
     color: #565656;
+    margin: 0px;
+    margin-top: 1vh;
 }
 
 .know-more {
     align-self: flex-start;
-    padding: 10px 0;
     color: #2F93FF;
     text-decoration: none;
-    margin-top: auto;
     font-size: 15px;
     font-weight: 600;
     line-height: 21px;
     text-align: left;
+    margin: 0px;
 }
 
 .carousel-wrapper {
@@ -126,33 +130,6 @@ body {
     /* flex: 1; Takes up the majority of space */
     padding-right: 20px;
     /* Ensures some space between the text and controls */
-}
-
-.carousel-controls-mb {
-    display: none;
-}
-
-.control-left,
-.control-right {
-    background-color: #007bff;
-    /* Background color */
-    color: white;
-    /* Text color */
-    border: none;
-    padding: 10px 15px;
-    margin: 0 5px;
-    /* Space between buttons */
-    cursor: pointer;
-    font-size: 18px;
-    /* Larger font size for visibility */
-    border-radius: 50%;
-    /* Circular buttons */
-}
-
-.control-left:hover,
-.control-right:hover {
-    background-color: #0056b3;
-    /* Darker background on hover */
 }
 
 /* .carousel-control:hover {
@@ -187,24 +164,46 @@ body {
 
 @media (max-width: 425px) {
 
-    .recognition-section {
-        padding: 0px;
-    }
-
-    .carousel-controls-mb {
-        display: flex;
-        justify-content: center;
-    }
-
-    .carousel-wrapper p {
-        width: auto;
-    }
-
-    .carousel-pagination {
-        display: none;
-    }
-
     .card {
         width: fit-content;
+    }
+
+    .card-content h3 {
+        color: #333;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 13.57px;
+        text-align: left;
+        margin: 0px;
+    }
+
+    .card-content p {
+        color: #666;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        margin: 0px;
+    }
+
+    .card-content span {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 13.57px;
+        text-align: left;
+        color: #565656;
+        margin: 0px;
+        margin-top: 1vh;
+    }
+
+    .know-more {
+        align-self: flex-start;
+        color: #2F93FF;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 13.57px;
+        text-align: left;
+        margin: 0px;
     }
 }
