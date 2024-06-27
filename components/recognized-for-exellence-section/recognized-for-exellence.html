@@ -79,17 +79,37 @@
 
     <script>
         var caraousal = document.getElementsByClassName('carousel')[0];
+        var clientWidth = caraousal.clientWidth;
+        var currWidth = caraousal.scrollLeft + clientWidth;
+        var caraousalWidth = caraousal.scrollWidth;
         var scrollRightDesktop = document.getElementsByClassName('control-right')?.[0];
         var scrollLeftDesktop = document.getElementsByClassName('control-left')?.[0];
         var scrollRightMobile = document.getElementsByClassName('control-right')?.[1];
         var scrollLeftMobile = document.getElementsByClassName('control-left')?.[1];
 
+        if (currWidth >= caraousalWidth) {
+            scrollRightDesktop.classList.add('controls-disabled');
+        }
+        if (currWidth <= clientWidth) {
+            scrollLeftDesktop.classList.add('controls-disabled');
+        }
+
+        if (currWidth <= clientWidth) {
+            scrollLeftMobile.classList.add('controls-disabled');
+        }
+        if (currWidth >= caraousalWidth) {
+            scrollRightMobile.classList.add('controls-disabled');
+        }
+
+        var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 405 - 40)/4; // 405 is the width of the card and some padding, 40 is the margin from both sides // TEMP_FIX
+
         // When a user clicks on the right arrow, the ul will scroll 750px to the right
         scrollRightDesktop.addEventListener('click', (event) => {
 
-            caraousal.scrollBy(750, 0);
+            caraousal.scrollBy(scrollByPixel, 0);
 
-            var currWidth = caraousal.scrollLeft;
+            var clientWidth = caraousal.clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth;
             var caraousalWidth = caraousal.scrollWidth;
 
             if (scrollLeftDesktop.classList.contains('controls-disabled')) {
@@ -104,16 +124,17 @@
         // When a user clicks on the left arrow, the ul will scroll 750px to the left
         scrollLeftDesktop.addEventListener('click', (event) => {
 
-            caraousal.scrollBy(-750, 0);
+            caraousal.scrollBy(-scrollByPixel, 0);
 
-            var currWidth = caraousal.scrollLeft;
+            var clientWidth = caraousal.clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth;
             var caraousalWidth = caraousal.scrollWidth;
 
             if (scrollRightDesktop.classList.contains('controls-disabled')) {
                 scrollRightDesktop.classList.remove('controls-disabled');
             }
 
-            if (currWidth <= 0) {
+            if (currWidth <= clientWidth) {
                 scrollLeftDesktop.classList.add('controls-disabled');
             }
         });
@@ -121,9 +142,10 @@
         // When a user clicks on the right arrow, the ul will scroll 750px to the right
         scrollRightMobile.addEventListener('click', (event) => {
 
-            caraousal.scrollBy(325, 0);
+            caraousal.scrollBy(scrollByPixel, 0);
 
-            var currWidth = caraousal.scrollLeft;
+            var clientWidth = caraousal.clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth;
             var caraousalWidth = caraousal.scrollWidth;
 
             if (scrollLeftMobile.classList.contains('controls-disabled')) {
@@ -138,16 +160,17 @@
         // When a user clicks on the left arrow, the ul will scroll 750px to the left
         scrollLeftMobile.addEventListener('click', (event) => {
 
-            caraousal.scrollBy(-325, 0);
+            caraousal.scrollBy(-scrollByPixel, 0);
 
-            var currWidth = caraousal.scrollLeft;
+            var clientWidth = caraousal.clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth;
             var caraousalWidth = caraousal.scrollWidth;
 
             if (scrollRightMobile.classList.contains('controls-disabled')) {
                 scrollRightMobile.classList.remove('controls-disabled');
             }
 
-            if (scrolledBy <= 0) {
+            if (currWidth <= clientWidth) {
                 scrollLeftMobile.classList.add('controls-disabled');
             }
         });
@@ -168,9 +191,15 @@
                     }
                 }));
 
-                var scrolledBy = (caraousalWidth / dots.length) * dotPosition;
+                var scrolledBy = scrollByPixel * dotPosition;
 
-                caraousal.scrollBy(scrolledBy, 0);
+                for (var j = 0; j < dots.length; j++) {
+                    dots[j].classList.remove('active');
+                }
+
+                ele.target.classList.add('active');
+
+                caraousal.scrollTo(scrolledBy, 0);
 
                 if (scrolledBy >= caraousalWidth) {
                     scrollRightDesktop.classList.add('controls-disabled');
