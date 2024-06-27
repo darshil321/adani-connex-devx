@@ -1,0 +1,98 @@
+<svg width="1440" height="800" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.3">
+<line x1="1440" y1="741.5" y2="741.5" stroke="url(#paint0_linear_150_6)"/>
+<line x1="1440" y1="621.5" y2="621.5" stroke="url(#paint1_linear_150_6)"/>
+<line x1="1440" y1="501.5" y2="501.5" stroke="url(#paint2_linear_150_6)"/>
+<line x1="1440" y1="381.5" y2="381.5" stroke="url(#paint3_linear_150_6)"/>
+<line x1="1440" y1="261.5" y2="261.5" stroke="url(#paint4_linear_150_6)"/>
+<line x1="1440" y1="141.5" y2="141.5" stroke="url(#paint5_linear_150_6)"/>
+</g>
+<g opacity="0.3">
+<line x1="239.5" y1="862" x2="239.5" stroke="url(#paint6_linear_150_6)"/>
+<line x1="359.5" y1="862" x2="359.5" stroke="url(#paint7_linear_150_6)"/>
+<line x1="479.5" y1="862" x2="479.5" stroke="url(#paint8_linear_150_6)"/>
+<line x1="599.5" y1="862" x2="599.5" stroke="url(#paint9_linear_150_6)"/>
+<line x1="719.5" y1="862" x2="719.5" stroke="url(#paint10_linear_150_6)"/>
+<line x1="839.5" y1="862" x2="839.5" stroke="url(#paint11_linear_150_6)"/>
+<line x1="959.5" y1="862" x2="959.5" stroke="url(#paint12_linear_150_6)"/>
+<line x1="1079.5" y1="862" x2="1079.5" stroke="url(#paint13_linear_150_6)"/>
+<line x1="1199.5" y1="862" x2="1199.5" stroke="url(#paint14_linear_150_6)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_150_6" x1="1440" y1="740.5" x2="0" y2="740.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint1_linear_150_6" x1="1440" y1="620.5" x2="0" y2="620.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint2_linear_150_6" x1="1440" y1="500.5" x2="0" y2="500.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint3_linear_150_6" x1="1440" y1="380.5" x2="0" y2="380.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint4_linear_150_6" x1="1440" y1="260.5" x2="0" y2="260.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint5_linear_150_6" x1="1440" y1="140.5" x2="0" y2="140.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint6_linear_150_6" x1="240.5" y1="862" x2="240.5" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint7_linear_150_6" x1="360.5" y1="862" x2="360.5" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint8_linear_150_6" x1="480.5" y1="862" x2="480.5" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint9_linear_150_6" x1="600.5" y1="862" x2="600.5" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint10_linear_150_6" x1="720.5" y1="862" x2="720.5" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint11_linear_150_6" x1="840.5" y1="862" x2="840.5" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint12_linear_150_6" x1="960.5" y1="862" x2="960.5" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint13_linear_150_6" x1="1080.5" y1="862" x2="1080.5" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint14_linear_150_6" x1="1200.5" y1="862" x2="1200.5" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.486472" stop-color="#7CB9FB"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+</defs>
+</svg>

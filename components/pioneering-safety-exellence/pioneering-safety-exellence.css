@@ -1,0 +1,210 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.pioneering-safety-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.pioneering-safety-section h2 {
+    color: #333;
+    font-size: 34.5px;
+    font-weight: 400;
+    line-height: 45px;
+    text-align: left;
+
+}
+
+.pioneering-safety-section p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: left;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scrollbar-width: none;
+    /* Hides the scrollbar in Firefox */
+    -ms-overflow-style: none;
+    /* Hides the scrollbar in Internet Explorer and Edge */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+    /* Hides the scrollbar in Chrome, Safari, and Opera */
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 400px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.card-image {
+    background: #f0f0f0;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    height: 100%;
+}
+
+
+.card-content h3 {
+    color: #333;
+    margin: 10px 0 5px 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 21px;
+    text-align: left;
+
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+}
+
+.card-content span {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #565656;
+}
+
+.know-more {
+    align-self: flex-start;
+    padding: 10px 0;
+    color: #2F93FF;
+    text-decoration: none;
+    margin-top: auto;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: left;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    /* Vertical alignment */
+    /* justify-content: space-between; Space between the text and controls */
+    /* padding: 20px; Optional padding for better spacing */
+}
+
+.carousel-wrapper p {
+    width: 75%;
+    /* flex: 1; Takes up the majority of space */
+    padding-right: 20px;
+    /* Ensures some space between the text and controls */
+}
+
+.carousel-controls-mb {
+    display: none;
+}
+
+.control-left,
+.control-right {
+    background-color: #007bff;
+    /* Background color */
+    color: white;
+    /* Text color */
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    /* Space between buttons */
+    cursor: pointer;
+    font-size: 18px;
+    /* Larger font size for visibility */
+    border-radius: 50%;
+    /* Circular buttons */
+}
+
+.control-left:hover,
+.control-right:hover {
+    background-color: #0056b3;
+    /* Darker background on hover */
+}
+
+/* .carousel-control:hover {
+    background-color: #0056b3;
+} */
+
+.carousel-pagination {
+    position: relative;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin: 15px 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+@media (max-width: 425px) {
+
+    .recognition-section {
+        padding: 0px;
+    }
+
+    .carousel-controls-mb {
+        display: flex;
+        justify-content: center;
+    }
+
+    .carousel-wrapper p {
+        width: auto;
+    }
+
+    .carousel-pagination {
+        display: none;
+    }
+
+    .card {
+        width: fit-content;
+    }
+}

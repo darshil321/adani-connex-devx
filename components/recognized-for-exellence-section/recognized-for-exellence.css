@@ -1,0 +1,226 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.recognition-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.recognition-section h2 {
+    color: #333;
+    font-size: 34.5px;
+    font-weight: 400;
+    line-height: 45px;
+    text-align: left;
+
+}
+
+.recognition-section p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: left;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scrollbar-width: none;
+    /* Hides the scrollbar in Firefox */
+    -ms-overflow-style: none;
+    /* Hides the scrollbar in Internet Explorer and Edge */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+    /* Hides the scrollbar in Chrome, Safari, and Opera */
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 400px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.card-image {
+    background: #f0f0f0;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    height: 100%;
+}
+
+
+.card-content h3 {
+    color: #333;
+    margin: 10px 0 5px 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 21px;
+    text-align: left;
+
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+}
+
+.card-content span {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #565656;
+}
+
+.know-more {
+    align-self: flex-start;
+    padding: 10px 0;
+    color: #2F93FF;
+    text-decoration: none;
+    margin-top: auto;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: left;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    /* Vertical alignment */
+    /* justify-content: space-between; Space between the text and controls */
+    /* padding: 20px; Optional padding for better spacing */
+}
+
+.carousel-wrapper p {
+    width: 75%;
+    /* flex: 1; Takes up the majority of space */
+    padding-right: 20px;
+    /* Ensures some space between the text and controls */
+}
+
+.carousel-controls-des {
+    padding-left: 10vw;
+    display: flex;
+    align-items: center;
+    gap: 1.5vw
+}
+
+.carousel-controls-mb {
+    display: none;
+}
+
+.control-left,
+.control-right {
+    height: 4.5vh;
+    width: 2.5vw;
+    background-color: #2F93FF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0px 2px 7.3px 0px #00000038;
+    font-size: 25px;
+}
+
+.controls-disabled {
+    background: #B8C4D1 !important;
+}
+
+/* .control-left:hover,
+.control-right:hover {
+    background-color: #0056b3;
+} */
+
+/* .carousel-control:hover {
+    background-color: #0056b3;
+} */
+
+.carousel-pagination {
+    position: relative;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin: 15px 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+@media (max-width: 425px) {
+
+    .recognition-section {
+        padding: 0px;
+    }
+
+    .carousel-controls-mb {
+        display: flex;
+        justify-content: center;
+        gap: 5vw;
+    }
+
+    .control-left, 
+    .control-right {
+        width: 10.5vw;
+    }
+
+    .carousel-controls-des {
+        display: none;
+    }
+
+    .carousel-wrapper p {
+        width: auto;
+    }
+
+    .carousel-pagination {
+        display: none;
+    }
+
+    .card {
+        width: fit-content;
+    }
+}

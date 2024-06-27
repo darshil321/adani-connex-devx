@@ -1,0 +1,338 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9fafb;
+}
+
+.main-container {
+    height: 86vh;
+    /* width: 100vw; */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-image: url('./../../assets/scroll-animation-section-desktop-bg.svg');
+}
+
+.title {
+    text-align: left;
+    margin-bottom: 20px;
+    max-width: 75%;
+    font-family: "Roboto";
+}
+
+.title .heading {
+    margin-bottom: 16px !important;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 44.98px;
+    text-align: left;
+}
+
+.title .desc {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    color: #4D4D4D
+}
+
+.section-container {
+    width: 100%;
+    display: flex;
+    /* border: 1px solid #e0e0e0; */
+    border-radius: 12px;
+    overflow: hidden;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    /* background-color: #fff; */
+}
+
+.sidebar {
+    width: 25%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    box-shadow: none;
+}
+
+.sidebar a {
+    display: block;
+    padding: 20px;
+    /* Increased padding for a larger clickable area */
+    margin-bottom: 0;
+    /* Remove space between items if necessary */
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+    border-radius: 8px;
+    /* Optional: Adjust to match your design preference */
+    margin: 10px;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+    background-color: #EFF6FD;
+    /* Solid color for active and hover */
+    color: #2F93FF;
+    /* White text color */
+    border: none;
+    /* Remove border */
+    padding: 24px, 32px, 24px, 32px;
+    /* Maintain padding consistency */
+}
+
+.content {
+    width: 75%;
+    padding: 20px;
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card {
+    padding: 15px;
+    position: absolute;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    border-radius: 16px;
+    background-color: #FAFCFE;
+    gap: 24px;
+    padding: 20px, 40px, 20px, 20px;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 12px 45px 0px #23232317;
+    transform: translateY(20px);
+}
+
+.card.active {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 3;
+}
+
+.card img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    /* margin-right: 20px; */
+}
+
+.card-content {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    text-align: left;
+    width: 100%;
+}
+
+.card-content h2 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35.16px;
+    text-align: left;
+    color: #000000;
+    margin: 0px;
+}
+
+.card-content p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: left;
+    color: #444444
+}
+
+.card-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 25.78px;
+    text-align: left;
+    color: #33405A
+}
+
+.card-content ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.key-advantages-grid {
+    display: grid;
+    width: 86%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+    align-items: center;
+}
+
+.card-content .key-advantages-grid li {
+
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: left;
+    color: #000F36
+}
+
+.card-content .key-advantages-grid li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.buttons {
+    margin-top: 3.4vh;
+    display: flex;
+    gap: 10px;
+}
+
+.buttons .discover-more {
+    background-color: transparent;
+    /* No fill, just outline */
+    color: #007bff;
+    /* Blue text color */
+    padding: 10px 20px;
+    /* Padding around the text */
+    font-size: 16px;
+    /* Appropriate text size */
+    border: 2px solid #007bff;
+    /* Blue border matching the text color */
+    border-radius: 25px;
+    /* Large border radius for rounded edges */
+    text-align: center;
+    text-decoration: none;
+    /* Removes underline from links if it's an <a> tag */
+    display: inline-block;
+    /* Allows width and height to work */
+    cursor: pointer;
+    /* Shows a pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition for hover effects */
+}
+
+.buttons .discover-more:hover,
+.buttons .discover-more:focus {
+    background-color: #007bff;
+    /* Blue background on hover/focus */
+    color: white;
+    /* White text on hover/focus */
+    outline: none;
+    /* Removes the outline that browsers might add on focus */
+}
+
+.buttons .connect-btn {
+    background-color: #007bff;
+    /* Solid blue background */
+    color: white;
+    /* White text color */
+    padding: 12px 24px;
+    /* Slightly larger padding for a bigger button */
+    font-size: 16px;
+    /* Consistent font size with other buttons */
+    border: none;
+    /* No border for a filled button */
+    border-radius: 20px;
+    /* Rounded edges, less pill-like than 25px */
+    text-align: center;
+    text-decoration: none;
+    /* Removes underline from links if it's an <a> tag */
+    display: inline-block;
+    /* Allows width and height to work */
+    cursor: pointer;
+    /* Shows a pointer cursor on hover */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Smooth transition for hover effects */
+}
+
+.buttons .connect-btn:hover,
+.buttons .connect-btn:focus {
+    background-color: #0056b3;
+    /* Darker blue on hover/focus for depth effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* Slight shadow for a "lift" effect */
+    outline: none;
+    /* Removes the outline that browsers might add on focus */
+}
+
+.buttons a:nth-child(1) {
+    background-color: #e0f7ff;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.buttons a:nth-child(1):hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.buttons a:nth-child(2) {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.buttons a:nth-child(2):hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 320px) {
+    .main-container {
+        height: auto;
+    }
+
+    .title {
+        max-width: 100%;
+    }
+
+    .section-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        display: grid;
+        padding: 0%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sidebar a {
+        padding: 15px;
+    }
+
+    .content {
+        height: 100vh;
+    }
+
+    .card {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .card img {
+        height: 20vh;
+    }
+
+    .buttons {
+        display: none;
+    }
+}
