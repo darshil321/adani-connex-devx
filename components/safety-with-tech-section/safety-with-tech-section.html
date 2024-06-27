@@ -42,14 +42,14 @@
             <div class="safety-title-disc">
                 <h2>Transforming Safety with Technology</h2>
                 <p>Our commitment to safety transcends conventional norms, integrating global standards with
-                    cutting-edge
-                    technology prioritizing worker well-being. We invest in people, processes, and technology, with a
-                    singular
-                    focus on creating data center infrastructure that inherently prioritizes safety.</p>
+                    cutting-edge technology prioritizing worker well-being. We invest in people, processes, and
+                    technology, with a singular focus on creating data center infrastructure that inherently prioritizes
+                    safety.</p>
             </div>
             <div class="dropdown">
                 <button class="download-button" onclick="toggleDropdown()">
-                    Download Factsheet <span class="arrow-down"></span>
+                    <p>Download Factsheet</p>
+                    <span class="arrow-down"></span>
                 </button>
                 <div id="dropdown-content" class="dropdown-content">
                     <a href="#">AI-powered safety in data center construction</a>
@@ -101,8 +101,66 @@
             </div>
         </div>
 
- </div> 
+        <div class="carousel-controls-mb">
+            <button class="control-left">‹</button>
+            <button class="control-right">›</button>
+        </div>
 
+    </div>
+
+    <script>
+        var caraousal = document.getElementsByClassName('safety-class-wrapper')[0];
+        var clientWidth = caraousal.clientWidth;
+        var currWidth = caraousal.scrollLeft + clientWidth;
+        var caraousalWidth = caraousal.scrollWidth;
+        var scrollRightMobile = document.getElementsByClassName('control-right')?.[0];
+        var scrollLeftMobile = document.getElementsByClassName('control-left')?.[0];
+
+        if (currWidth <= clientWidth) {
+            scrollLeftMobile.classList.add('controls-disabled');
+        }
+        if (currWidth >= caraousalWidth) {
+            scrollRightMobile.classList.add('controls-disabled');
+        }
+
+        var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 405 - 40) / 4; // 405 is the width of the card and some padding, 40 is the margin from both sides // TEMP_FIX
+
+        // When a user clicks on the right arrow, the ul will scroll 750px to the right
+        scrollRightMobile.addEventListener('click', (event) => {
+
+            caraousal.scrollBy(scrollByPixel, 0);
+
+            var clientWidth = caraousal.clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth + 1; // + 1 is the temp fix for remaining pixel
+            var caraousalWidth = caraousal.scrollWidth;
+
+            if (scrollLeftMobile.classList.contains('controls-disabled')) {
+                scrollLeftMobile.classList.remove('controls-disabled');
+            }
+
+            if (currWidth >= caraousalWidth) {
+                scrollRightMobile.classList.add('controls-disabled');
+            }
+        });
+
+        // When a user clicks on the left arrow, the ul will scroll 750px to the left
+        scrollLeftMobile.addEventListener('click', (event) => {
+
+            caraousal.scrollBy(-scrollByPixel, 0);
+
+            var clientWidth = caraousal.clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth;
+            var caraousalWidth = caraousal.scrollWidth;
+
+            if (scrollRightMobile.classList.contains('controls-disabled')) {
+                scrollRightMobile.classList.remove('controls-disabled');
+            }
+
+            if (currWidth <= clientWidth) {
+                scrollLeftMobile.classList.add('controls-disabled');
+            }
+        });
+    </script>
 
 </body>
 
