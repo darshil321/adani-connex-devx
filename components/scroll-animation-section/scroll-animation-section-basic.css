@@ -207,87 +207,62 @@ body {
     gap: 10px;
 }
 
+/* Style for 'Discover More' button to be filled */
 .buttons .discover-more {
-    background-color: transparent;
-    /* No fill, just outline */
-    color: #007bff;
-    /* Blue text color */
-    padding: 10px 20px;
-    /* Padding around the text */
-    font-size: 16px;
-    /* Appropriate text size */
-    border: 2px solid #007bff;
-    /* Blue border matching the text color */
-    border-radius: 25px;
-    /* Large border radius for rounded edges */
+    background-color: #2F93FF; /* Blue background */
+    color: black; /* White text color */
+    padding: 10px 20px; /* Padding around the text */
+    font-size: 16px; /* Appropriate text size */
+    border: 2px solid #2F93FF; /* Blue border matching the background */
+    border-radius: 25px; /* Large border radius for rounded edges */
     text-align: center;
-    text-decoration: none;
-    /* Removes underline from links if it's an <a> tag */
-    display: inline-block;
-    /* Allows width and height to work */
-    cursor: pointer;
-    /* Shows a pointer cursor on hover */
-    transition: background-color 0.3s, color 0.3s;
-    /* Smooth transition for hover effects */
+    text-decoration: none; /* Removes underline from links if it's an <a> tag */
+    display: inline-block; /* Allows width and height to work */
+    cursor: pointer; /* Shows a pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
 }
 
 .buttons .discover-more:hover,
 .buttons .discover-more:focus {
-    background-color: #007bff;
-    /* Blue background on hover/focus */
-    color: white;
-    /* White text on hover/focus */
-    outline: none;
-    /* Removes the outline that browsers might add on focus */
+    background-color: #0056b3; /* Slightly darker blue on hover */
+    color: white; /* Maintain white text on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slight shadow for a "lift" effect */
 }
 
+/* Updated style for 'Connect With A DC Advisor' button to increase emphasis */
 .buttons .connect-btn {
-    background-color: #007bff;
-    /* Solid blue background */
-    color: white;
-    /* White text color */
-    padding: 12px 24px;
-    /* Slightly larger padding for a bigger button */
-    font-size: 16px;
-    /* Consistent font size with other buttons */
-    border: none;
-    /* No border for a filled button */
-    border-radius: 20px;
-    /* Rounded edges, less pill-like than 25px */
+    background-color: #0056b3; /* Darker blue background for more emphasis */
+    color: white; /* White text color */
+    padding: 12px 24px; /* Slightly larger padding for a bigger button */
+    font-size: 16px; /* Consistent font size with other buttons */
+    border: none; /* No border for a filled button */
+    border-radius: 20px; /* Rounded edges, less pill-like than 25px */
     text-align: center;
-    text-decoration: none;
-    /* Removes underline from links if it's an <a> tag */
-    display: inline-block;
-    /* Allows width and height to work */
-    cursor: pointer;
-    /* Shows a pointer cursor on hover */
-    transition: background-color 0.3s, box-shadow 0.3s;
-    /* Smooth transition for hover effects */
+    text-decoration: none; /* Removes underline from links if it's an <a> tag */
+    display: inline-block; /* Allows width and height to work */
+    cursor: pointer; /* Shows a pointer cursor on hover */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
 }
 
 .buttons .connect-btn:hover,
 .buttons .connect-btn:focus {
-    background-color: #0056b3;
-    /* Darker blue on hover/focus for depth effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    /* Slight shadow for a "lift" effect */
-    outline: none;
-    /* Removes the outline that browsers might add on focus */
+    background-color: #003a70; /* Even darker blue on hover for depth effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slight shadow for a "lift" effect */
 }
 
 .buttons a:nth-child(1) {
-    background-color: #e0f7ff;
-    color: #007bff;
-    border: 1px solid #007bff;
+    background-color: #fff;
+    color: #2F93FF;
+    border: 1px solid #2F93FF;
 }
 
 .buttons a:nth-child(1):hover {
-    background-color: #007bff;
+    background-color: #2F93FF;
     color: #fff;
 }
 
 .buttons a:nth-child(2) {
-    background-color: #007bff;
+    background-color: #2F93FF;
     color: #fff;
 }
 
@@ -316,7 +291,11 @@ body {
     }
 
     .sidebar a {
-        padding: 15px;
+        font-size: 16px !important;
+        padding-right: 1.1vw;
+        padding-left: 1.1vw;
+        margin: 0px;
+        text-align: center;
     }
 
     .content {
@@ -334,5 +313,12 @@ body {
 
     .buttons {
         display: none;
+    }
+
+    .card-content .key-advantages-grid li {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.06px;
+        text-align: left;
     }
 }
