@@ -8,6 +8,7 @@ body {
 
 .main-container {
     height: 86vh;
+    /* width: 100vw; */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -38,15 +39,17 @@ body {
     font-weight: 300;
     line-height: 24px;
     text-align: left;
-    color: #4D4D4D;
+    color: #4D4D4D
 }
 
 .section-container {
     width: 100%;
     display: flex;
+    /* border: 1px solid #e0e0e0; */
     border-radius: 12px;
-    padding-top: 5vh;
-    /* overflow: hidden; */
+    overflow: hidden;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    /* background-color: #fff; */
 }
 
 .sidebar {
@@ -62,21 +65,29 @@ body {
 .sidebar a {
     display: block;
     padding: 20px;
+    /* Increased padding for a larger clickable area */
     margin-bottom: 0;
+    /* Remove space between items if necessary */
     text-decoration: none;
     color: #333;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     font-weight: 500;
     border-radius: 8px;
+    /* Optional: Adjust to match your design preference */
     margin: 10px;
 }
 
 .sidebar a.active,
 .sidebar a:hover {
     background-color: #EFF6FD;
+    /* Solid color for active and hover */
     color: #2F93FF;
+    /* White text color */
     border: none;
+    /* Remove border */
+    padding: 24px, 32px, 24px, 32px;
+    /* Maintain padding consistency */
 }
 
 .content {
@@ -89,49 +100,30 @@ body {
     justify-content: center;
 }
 
+
 .card {
     padding: 15px;
     position: absolute;
     width: calc(100% - 50px);
     height: calc(100% - 50px);
-    transition: opacity 1s ease, transform 1s ease;
-    /* transition: transform 1s ease; */
+    /* transition: transform 1000ms ease; */
+    /* transition: opacity 1000ms ease, transform 1000ms ease; */
     display: flex;
     border-radius: 16px;
     background-color: #FAFCFE;
     gap: 24px;
-    padding: 20px;
+    padding: 20px, 40px, 20px, 20px;
     flex-direction: row;
     top: 0;
     left: 0;
     box-shadow: 0px 12px 45px 0px #23232317;
-    transform: translateY(100px);
-    opacity: 0;
-    z-index: 1;
+    transform: translateY(-100px);
 }
 
 .card.active {
     opacity: 1;
     transform: translateY(0);
-    z-index: 4;
-}
-
-.card.previous-1 {
-    transform: translateY(-40px) scale(0.9);
-    opacity: 1;
     z-index: 3;
-}
-
-.card.previous-2 {
-    transform: translateY(-78px) scale(0.8);
-    opacity: 1;
-    z-index: 2;
-}
-
-.card.previous-3 {
-    transform: translateY(-114px) scale(0.7);
-    opacity: 1;
-    z-index: 1;
 }
 
 .card img {
@@ -139,9 +131,13 @@ body {
     height: auto;
     border-radius: 12px;
     object-fit: cover;
+    /* margin-right: 20px; */
 }
 
 .card-content {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
     text-align: left;
     width: 100%;
 }
@@ -160,7 +156,7 @@ body {
     font-weight: 400;
     line-height: 18.75px;
     text-align: left;
-    color: #444444;
+    color: #444444
 }
 
 .card-content h3 {
@@ -168,7 +164,7 @@ body {
     font-weight: 600;
     line-height: 25.78px;
     text-align: left;
-    color: #33405A;
+    color: #33405A
 }
 
 .card-content ul {
@@ -188,6 +184,7 @@ body {
 }
 
 .card-content .key-advantages-grid li {
+
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -195,7 +192,7 @@ body {
     font-weight: 400;
     line-height: 18.75px;
     text-align: left;
-    color: #000F36;
+    color: #000F36
 }
 
 .card-content .key-advantages-grid li img {

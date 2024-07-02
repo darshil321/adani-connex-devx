@@ -109,37 +109,41 @@
 </div>
 
 <script>
-    document.querySelectorAll('.sidebar a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
-            this.classList.add('active');
+document.querySelectorAll('.sidebar a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
 
-            const targetId = this.getAttribute('data-target');
-            const targetCard = document.getElementById(targetId);
-            const activeCard = document.querySelector('.card.active');
+        const targetId = this.getAttribute('data-target');
+        const targetCard = document.getElementById(targetId);
+        const activeCard = document.querySelector('.card.active');
 
-            // Remove 'active' and 'previous' classes from all cards
-            document.querySelectorAll('.card').forEach(card => {
-                card.classList.remove('active', 'previous-1', 'previous-2');
-            });
+        // Remove 'active' and 'previous' classes from all cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.classList.remove('active', 'previous-1', 'previous-2', 'previous-3');
+        });
 
-            // Set previous cards
-            if (activeCard) {
-                if (activeCard !== targetCard) {
-                    activeCard.classList.add('previous-1');
-                    if (activeCard.previousElementSibling) {
-                        activeCard.previousElementSibling.classList.add('previous-2');
-                    }
+        // Set previous cards
+        if (activeCard) {
+            if (activeCard !== targetCard) {
+                activeCard.classList.add('previous-1');
+                if (activeCard.previousElementSibling) {
+                    activeCard.previousElementSibling.classList.add('previous-2');
+                }
+                if (activeCard.previousElementSibling?.previousElementSibling) {
+                    activeCard.previousElementSibling.previousElementSibling.classList.add('previous-3');
                 }
             }
+        }
 
-            // Set active card
-            if (targetCard) {
-                targetCard.classList.add('active');
-            }
-        });
+        // Set active card
+        if (targetCard) {
+            targetCard.classList.add('active');
+        }
     });
+});
+
 </script>
 
 </body>
