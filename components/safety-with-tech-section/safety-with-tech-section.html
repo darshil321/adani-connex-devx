@@ -52,8 +52,18 @@
                     <span class="arrow-down"></span>
                 </button>
                 <div id="dropdown-content" class="dropdown-content">
-                    <a href="#">AI-powered safety in data center construction</a>
-                    <a href="#">DABS and E-Permits for Enhanced Safety</a>
+                    <a href="#" class="dropdown-li">
+                        <p>
+                            AI-powered safety in data center construction
+                        </p>
+                        <img src="/assets/dowload-btn.svg" alt="Download Logo">
+                    </a>
+                    <a href="#" class="dropdown-li">
+                        <p>
+                            DABS and E-Permits for Enhanced Safety
+                        </p>
+                        <img src="/assets/dowload-btn.svg" alt="Download Logo">
+                    </a>
                 </div>
             </div>
         </div>
@@ -123,7 +133,16 @@
             scrollRightMobile.classList.add('controls-disabled');
         }
 
-        var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 405 - 40) / 4; // 405 is the width of the card and some padding, 40 is the margin from both sides // TEMP_FIX
+        var noOfSectionsInScroll = 4;
+        
+        if (Math.floor(caraousalWidth / clientWidth) == caraousalWidth / clientWidth) {
+            noOfSectionsInScroll = caraousalWidth / clientWidth;
+        } else {
+            noOfSectionsInScroll = Math.floor(caraousalWidth / clientWidth) + 1;
+        }
+
+        var scrollByPixel = caraousal.scrollWidth / noOfSectionsInScroll;
+        // var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 405 - 40) / 4; // 405 is the width of the card and some padding, 40 is the margin from both sides // TEMP_FIX
 
         // When a user clicks on the right arrow, the ul will scroll 750px to the right
         scrollRightMobile.addEventListener('click', (event) => {
@@ -131,7 +150,7 @@
             caraousal.scrollBy(scrollByPixel, 0);
 
             var clientWidth = caraousal.clientWidth;
-            var currWidth = caraousal.scrollLeft + clientWidth + 1; // + 1 is the temp fix for remaining pixel
+            var currWidth = caraousal.scrollLeft + clientWidth + scrollByPixel; // + 1 is the temp fix for remaining pixel
             var caraousalWidth = caraousal.scrollWidth;
 
             if (scrollLeftMobile.classList.contains('controls-disabled')) {
@@ -149,7 +168,7 @@
             caraousal.scrollBy(-scrollByPixel, 0);
 
             var clientWidth = caraousal.clientWidth;
-            var currWidth = caraousal.scrollLeft + clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth - scrollByPixel;
             var caraousalWidth = caraousal.scrollWidth;
 
             if (scrollRightMobile.classList.contains('controls-disabled')) {

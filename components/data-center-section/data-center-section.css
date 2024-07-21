@@ -63,12 +63,12 @@ body {
     display: flex;
     justify-content: center;
     /* width: 90%; */
-    gap: 1.75vw;
+    gap: 0.75vw;
     margin-top: 7vh;
 }
 
 .info-slide {
-    width: 14.5vw;
+    width: 12.5vw;
     position: relative;
 }
 
@@ -96,7 +96,7 @@ body {
     color: #333;
     position: absolute;
     z-index: 1;
-    top: 25%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;

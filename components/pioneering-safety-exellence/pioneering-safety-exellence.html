@@ -58,12 +58,51 @@
                     <a href="#" class="know-more">Know more</a>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="/assets/pionnering_img_2.svg" alt="W. Media-Global Award">
+                </div>
+                <div class="card-content">
+                    <span>Certification</span>
+                    <h3>Gold award by SKOCH Group</h3>
+                    <p>We are honored to receive Gold award by SKOCH Group under the ESG category for implementation of
+                        one of its kind, ’Safety Analytics Tool: Artificial Intelligence (AI) based Real Time Monitoring
+                        System</p>
+                    <a href="#" class="know-more">Know more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="/assets/pionnering_img_2.svg" alt="W. Media-Global Award">
+                </div>
+                <div class="card-content">
+                    <span>Certification</span>
+                    <h3>Gold award by SKOCH Group</h3>
+                    <p>We are honored to receive Gold award by SKOCH Group under the ESG category for implementation of
+                        one of its kind, ’Safety Analytics Tool: Artificial Intelligence (AI) based Real Time Monitoring
+                        System</p>
+                    <a href="#" class="know-more">Know more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="/assets/pionnering_img_2.svg" alt="W. Media-Global Award">
+                </div>
+                <div class="card-content">
+                    <span>Certification</span>
+                    <h3>Gold award by SKOCH Group</h3>
+                    <p>We are honored to receive Gold award by SKOCH Group under the ESG category for implementation of
+                        one of its kind, ’Safety Analytics Tool: Artificial Intelligence (AI) based Real Time Monitoring
+                        System</p>
+                    <a href="#" class="know-more">Know more</a>
+                </div>
+            </div>
         </div>
         <div class="carousel-pagination">
-            <span class="dot active"></span>
+            <!-- <span class="dot active"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-            <span class="dot"></span>
+            <span class="dot"></span> -->
         </div>
     </div>
 
@@ -74,7 +113,25 @@
         var currWidth = caraousal.scrollLeft + clientWidth;
         var caraousalWidth = caraousal.scrollWidth;
 
-        var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 430 - 40 - 40)/4; // 405 is the width of the card and some padding, 40 is the margin from both sides, 40 is the gap between cards // TEMP_FIX
+        var noOfCarousalDots = 4;
+
+        if (Math.floor(caraousalWidth / clientWidth) == caraousalWidth / clientWidth) {
+            noOfCarousalDots = caraousalWidth / clientWidth;
+        } else {
+            noOfCarousalDots = Math.floor(caraousalWidth / clientWidth) + 1;
+        }
+
+        for (var i = 0; i < noOfCarousalDots; i++) {
+            var dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i == 0) {
+                dot.classList.add('active');
+            }
+            document.getElementsByClassName('carousel-pagination')[0].appendChild(dot);
+        }
+
+        // var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 430 - 40 - 40)/4; // 405 is the width of the card and some padding, 40 is the margin from both sides, 40 is the gap between cards // TEMP_FIX
+        var scrollByPixel = caraousal.scrollWidth / noOfCarousalDots;
 
         var dots = document.getElementsByClassName('dot');
         for (var i = 0; i < dots.length; i++) {

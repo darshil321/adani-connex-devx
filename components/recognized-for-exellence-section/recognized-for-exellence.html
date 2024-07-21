@@ -64,12 +64,24 @@
                     <a href="#" class="know-more">Know more</a>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="./../../assets/recognize-section-award-img-2.svg" alt="W. Media-Global Award">
+                </div>
+                <div class="card-content">
+                    <span>Certification</span>
+                    <h3>Digital Technology Inside the Data Center Award for EdgeOS</h3>
+                    <p>We’re honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global
+                        for our efforts with EdgeOS!</p>
+                    <a href="#" class="know-more">Know more</a>
+                </div>
+            </div>
         </div>
         <div class="carousel-pagination">
-            <span class="dot active"></span>
+            <!-- <span class="dot active"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-            <span class="dot"></span>
+            <span class="dot"></span> -->
         </div>
         <div class="carousel-controls-mb">
             <button class="control-left">‹</button>
@@ -87,6 +99,26 @@
         var scrollRightMobile = document.getElementsByClassName('control-right')?.[1];
         var scrollLeftMobile = document.getElementsByClassName('control-left')?.[1];
 
+        var noOfCarousalDots = 4;
+        
+        if (Math.floor(caraousalWidth / clientWidth) == caraousalWidth / clientWidth) {
+            noOfCarousalDots = caraousalWidth / clientWidth;
+        } else {
+            noOfCarousalDots = Math.floor(caraousalWidth / clientWidth) + 1;
+        }
+
+        for (var i = 0; i < noOfCarousalDots; i++) {
+            var dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i == 0) {
+                dot.classList.add('active');
+            }
+            document.getElementsByClassName('carousel-pagination')[0].appendChild(dot);
+        }
+
+        // var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 405 - 40)/4; // 405 is the width of the card and some padding, 40 is the margin from both sides // TEMP_FIX
+        var scrollByPixel = caraousal.scrollWidth / noOfCarousalDots;
+
         if (currWidth >= caraousalWidth) {
             scrollRightDesktop.classList.add('controls-disabled');
         }
@@ -101,15 +133,13 @@
             scrollRightMobile.classList.add('controls-disabled');
         }
 
-        var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 405 - 40)/4; // 405 is the width of the card and some padding, 40 is the margin from both sides // TEMP_FIX
-
         // When a user clicks on the right arrow, the ul will scroll 750px to the right
         scrollRightDesktop.addEventListener('click', (event) => {
 
             caraousal.scrollBy(scrollByPixel, 0);
 
             var clientWidth = caraousal.clientWidth;
-            var currWidth = caraousal.scrollLeft + clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth + scrollByPixel;
             var caraousalWidth = caraousal.scrollWidth;
 
             if (scrollLeftDesktop.classList.contains('controls-disabled')) {
@@ -127,7 +157,7 @@
             caraousal.scrollBy(-scrollByPixel, 0);
 
             var clientWidth = caraousal.clientWidth;
-            var currWidth = caraousal.scrollLeft + clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth - scrollByPixel;
             var caraousalWidth = caraousal.scrollWidth;
 
             if (scrollRightDesktop.classList.contains('controls-disabled')) {
@@ -145,7 +175,7 @@
             caraousal.scrollBy(scrollByPixel, 0);
 
             var clientWidth = caraousal.clientWidth;
-            var currWidth = caraousal.scrollLeft + clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth + scrollByPixel;
             var caraousalWidth = caraousal.scrollWidth;
 
             if (scrollLeftMobile.classList.contains('controls-disabled')) {
@@ -163,7 +193,7 @@
             caraousal.scrollBy(-scrollByPixel, 0);
 
             var clientWidth = caraousal.clientWidth;
-            var currWidth = caraousal.scrollLeft + clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth - scrollByPixel;
             var caraousalWidth = caraousal.scrollWidth;
 
             if (scrollRightMobile.classList.contains('controls-disabled')) {

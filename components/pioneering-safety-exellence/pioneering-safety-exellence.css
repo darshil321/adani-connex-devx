@@ -5,7 +5,7 @@ body {
 }
 
 .pioneering-safety-section {
-    max-width: 1200px;
+    max-width: 93vw;
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
@@ -39,6 +39,7 @@ body {
     /* Hides the scrollbar in Firefox */
     -ms-overflow-style: none;
     /* Hides the scrollbar in Internet Explorer and Edge */
+    scroll-behavior: smooth;
 }
 
 .carousel::-webkit-scrollbar {

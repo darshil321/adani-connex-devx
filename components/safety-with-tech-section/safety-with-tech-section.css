@@ -3,8 +3,10 @@ body {
 }
 
 .safety-section {
-    max-width: 1200px;
-    margin: auto;
+    max-width: 93vw;
+    /* margin: auto; */
+    margin-right: 12.5vh;
+    margin-left: 12.5vh;
     padding: 20px;
     text-align: center;
 }
@@ -42,14 +44,13 @@ body {
     &::-webkit-scrollbar {
         display: none;
     }
-
-    ;
+    scroll-behavior: smooth;
 }
 
 .safety-cards {
     display: flex;
     width: 1200px;
-    gap: 20px;
+    gap: 35px;
     justify-content: space-between;
 }
 
@@ -209,8 +210,10 @@ body {
 
 .dropdown-content {
     display: none;
+    transition: all 2s ease-in-out;
     /* Hide dropdown content by default */
     top: 80%;
+    border-radius: 10px;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
@@ -222,6 +225,15 @@ body {
     line-height: 21px;
     text-align: left;
     color: #000000
+}
+
+.dropdown-content .dropdown-li {
+    display: flex;
+    flex-direction: row;
+}
+
+.dropdown-content .dropdown-li p {
+    margin: 0px;
 }
 
 .safety-title-disc-download-dropdown {
@@ -236,7 +248,8 @@ body {
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1
+    background-color: #f1f1f1;
+    border-radius: 10px;
 }
 
 
@@ -248,6 +261,7 @@ body {
 
     .safety-section {
         width: 100%;
+        margin: auto;
     }
 
     .safety-section h2 {
@@ -266,7 +280,6 @@ body {
 
     .safety-cards {
         flex-direction: row;
-
     }
 
     .dropdown {
@@ -300,6 +313,7 @@ body {
         /* Hides the scrollbar in Firefox */
         -ms-overflow-style: none;
         /* Hides the scrollbar in Internet Explorer and Edge */
+        scroll-behavior: smooth;
     }
 
     .carousel::-webkit-scrollbar {

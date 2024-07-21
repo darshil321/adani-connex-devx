@@ -167,12 +167,15 @@ body {
     max-width: 300px;
     height: auto;
     border-radius: 12px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .card-content {
     text-align: left;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .card-content h2 {
@@ -190,6 +193,7 @@ body {
     line-height: 18.75px;
     text-align: left;
     color: #444444;
+    margin: 0px;
 }
 
 .card-content h3 {
@@ -198,14 +202,15 @@ body {
     line-height: 25.78px;
     text-align: left;
     color: #33405A;
+    margin: 0px;
 }
 
 .card-content ul {
     list-style: none;
-    padding: 0;
+    padding: 0px;
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
+    margin: 0px;
 }
 
 .key-advantages-grid {
@@ -217,7 +222,7 @@ body {
 }
 
 .card-content .key-advantages-grid li {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     display: flex;
     align-items: center;
     font-size: 16px;
@@ -228,8 +233,8 @@ body {
 }
 
 .card-content .key-advantages-grid li img {
-    width: 24px;
-    height: 24px;
+    width: 3vw;
+    height: 5vh;
     margin-right: 10px;
 }
 
@@ -309,16 +314,19 @@ body {
 
     .title {
         max-width: 100%;
+        margin-bottom: 0px;
     }
 
     .section-container {
         flex-direction: column;
+        padding-top: 0px;
     }
 
     .sidebar {
         width: 100%;
         display: grid;
         padding: 0%;
+        margin-bottom: 5vh;
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -337,6 +345,7 @@ body {
     .card {
         flex-direction: column;
         width: 100%;
+        height: auto;
     }
 
     .card img {
@@ -347,10 +356,29 @@ body {
         display: none;
     }
 
+    .card-content {
+        gap: 15px;
+    }
+
+    .card-content p {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+    }
+
+    .card-content .key-advantages-grid {
+        width: auto;
+    }
+
     .card-content .key-advantages-grid li {
         font-size: 12px;
         font-weight: 400;
         line-height: 14.06px;
         text-align: left;
+    }
+
+    .card-content .key-advantages-grid li img {
+        width: 5vw;
     }
 }
