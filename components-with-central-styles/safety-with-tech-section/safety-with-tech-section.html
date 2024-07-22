@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Scalable Solutions to Power Your Growth</title> -->
+    <link rel="stylesheet" href="./safety-with-tech-section.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.getElementById("dropdown-content");
+            var dropdownArrow = document.querySelector(".arrow-down");
+
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+                dropdownArrow.style.transform = "rotate(45deg)";
+            } else {
+                dropdownContent.style.display = "block";
+                dropdownArrow.style.transform = "rotate(-135deg)";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div class="safety-section">
+        <div class="safety-title-disc-download-dropdown">
+            <div class="safety-title-disc">
+                <h2>Transforming Safety with Technology</h2>
+                <p>Our commitment to safety transcends conventional norms, integrating global standards with
+                    cutting-edge technology prioritizing worker well-being. We invest in people, processes, and
+                    technology, with a singular focus on creating data center infrastructure that inherently prioritizes
+                    safety.</p>
+            </div>
+            <div class="dropdown">
+                <button class="download-button" onclick="toggleDropdown()">
+                    <p>Download Factsheet</p>
+                    <span class="arrow-down"></span>
+                </button>
+                <div id="dropdown-content" class="dropdown-content">
+                    <a href="#" class="dropdown-li">
+                        <p>
+                            AI-powered safety in data center construction
+                        </p>
+                        <img src="/assets/dowload-btn.svg" alt="Download Logo">
+                    </a>
+                    <a href="#" class="dropdown-li">
+                        <p>
+                            DABS and E-Permits for Enhanced Safety
+                        </p>
+                        <img src="/assets/dowload-btn.svg" alt="Download Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="safety-class-wrapper">
+            <div class="safety-cards">
+                <div class="safety-card">
+                    <button class="play-button"></button>
+                    <div class="safety-image">
+                        <img src="./../../assets/safety-with-tech-img-1.svg"
+                            alt="AI-powered safety in data center construction">
+                    </div>
+                    <div class="safety-image-desc">
+                        <h3>AI-powered safety in data center construction</h3>
+                        <p>Our purpose-built AI based safety analytics tool empowers the workforce to swiftly identify
+                            risks, monitor real-time progress, preempt potential hazards, and enable proactive decision
+                            making.</p>
+                    </div>
+                </div>
+                <div class="safety-card">
+                    <button class="play-button"></button>
+                    <div class="safety-image">
+                        <img src="./../../assets/safety-with-tech-img-2.svg"
+                            alt="Elevating Safety with Virtual Reality">
+                    </div>
+                    <div class="safety-image-desc">
+                        <h3>Elevating Safety with Virtual Reality</h3>
+                        <p>Our state-of-the-art Virtual Reality (VR) training program provides immersive learning
+                            experiences to workers ensuring better preparedness against high-risk activities within a
+                            controlled environment.</p>
+                    </div>
+                </div>
+                <div class="safety-card">
+                    <button class="play-button"></button>
+                    <div class="safety-image">
+                        <img src="./../../assets/safety-with-tech-img-3.svg"
+                            alt="DABS and E-Permits for Enhanced Safety">
+                    </div>
+                    <div class="safety-image-desc">
+                        <h3>DABS and E-Permits for Enhanced Safety</h3>
+                        <p>We ensure preparedness at every step by leveraging cross-functional tools like DABS for
+                            comprehensive project planning and E-permits for digitizing physical approvals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-controls-mb">
+            <button class="control-left">‹</button>
+            <button class="control-right">›</button>
+        </div>
+
+    </div>
+
+    <script>
+        var caraousal = document.getElementsByClassName('safety-class-wrapper')[0];
+        var clientWidth = caraousal.clientWidth;
+        var currWidth = caraousal.scrollLeft + clientWidth;
+        var caraousalWidth = caraousal.scrollWidth;
+        var scrollRightMobile = document.getElementsByClassName('control-right')?.[0];
+        var scrollLeftMobile = document.getElementsByClassName('control-left')?.[0];
+
+        if (currWidth <= clientWidth) {
+            scrollLeftMobile.classList.add('controls-disabled');
+        }
+        if (currWidth >= caraousalWidth) {
+            scrollRightMobile.classList.add('controls-disabled');
+        }
+
+        var noOfSectionsInScroll = 4;
+        
+        if (Math.floor(caraousalWidth / clientWidth) == caraousalWidth / clientWidth) {
+            noOfSectionsInScroll = caraousalWidth / clientWidth;
+        } else {
+            noOfSectionsInScroll = Math.floor(caraousalWidth / clientWidth) + 1;
+        }
+
+        var scrollByPixel = caraousal.scrollWidth / noOfSectionsInScroll;
+        // var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 405 - 40) / 4; // 405 is the width of the card and some padding, 40 is the margin from both sides // TEMP_FIX
+
+        // When a user clicks on the right arrow, the ul will scroll 750px to the right
+        scrollRightMobile.addEventListener('click', (event) => {
+
+            caraousal.scrollBy(scrollByPixel, 0);
+
+            var clientWidth = caraousal.clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth + scrollByPixel; // + 1 is the temp fix for remaining pixel
+            var caraousalWidth = caraousal.scrollWidth;
+
+            if (scrollLeftMobile.classList.contains('controls-disabled')) {
+                scrollLeftMobile.classList.remove('controls-disabled');
+            }
+
+            if (currWidth >= caraousalWidth) {
+                scrollRightMobile.classList.add('controls-disabled');
+            }
+        });
+
+        // When a user clicks on the left arrow, the ul will scroll 750px to the left
+        scrollLeftMobile.addEventListener('click', (event) => {
+
+            caraousal.scrollBy(-scrollByPixel, 0);
+
+            var clientWidth = caraousal.clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth - scrollByPixel;
+            var caraousalWidth = caraousal.scrollWidth;
+
+            if (scrollRightMobile.classList.contains('controls-disabled')) {
+                scrollRightMobile.classList.remove('controls-disabled');
+            }
+
+            if (currWidth <= clientWidth) {
+                scrollLeftMobile.classList.add('controls-disabled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

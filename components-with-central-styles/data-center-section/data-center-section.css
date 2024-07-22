@@ -11,22 +11,17 @@ body {
 
 .video-container {
     position: relative;
-    width: -webkit-fill-available;
-    height: 68vh;
+    width: 100%;
+    height: 500px;
     /* Adjust based on the size you need
     background: url('path_to_your_video_thumbnail.jpg') center center / cover no-repeat; */
 }
 
 .video-container iframe {
     width: 80%;
-    height: 100%;
+    height: 108%;
     border-radius: 20px;
     display: none;
-}
-
-.video-thumbnail .video-thumbnail-img {
-    width: 80%;
-    height: 100%;
 }
 
 .play-button {
@@ -40,7 +35,7 @@ body {
     background-color: red;
     color: white;
     border: none;
-    border-radius: 25%;
+    border-radius: 20%;
     font-size: 30px;
     /* Adjust the size of the play icon */
     cursor: pointer;
@@ -52,7 +47,7 @@ body {
     font-size: 34.5px;
     font-weight: 400;
     line-height: 45px;
-    text-align: center; 
+    text-align: center;
 }
 
 .video-description p {
@@ -69,7 +64,7 @@ body {
     justify-content: center;
     /* width: 90%; */
     gap: 0.75vw;
-    margin-top: 1vh;
+    margin-top: 7vh;
 }
 
 .info-slide {
@@ -111,12 +106,7 @@ body {
     align-items: center;
 }
 
-/* @media (max-width: 1024px) {
-
-    .video-container {
-        width: auto;
-        height: auto
-    }
+@media (max-width: 1024px) {
 
     .data-center-section {
         width: fit-content;
@@ -129,7 +119,8 @@ body {
     }
 
     .desc-parent {
-        width: 80%;
+        width: 40%;
+        margin: auto;
     }
 
     .video-description p {
@@ -153,97 +144,9 @@ body {
 
     .info-slide p {
         top: 40%;
-        font-size: 14px;
+        font-size: 9.96px;
         font-weight: 400;
         line-height: 17.65px;
         text-align: center;
-    }
-} */
-
-@media (max-width: 768px) {
-
-    .video-thumbnail {
-        height: 100%;
-    }
-
-    .video-thumbnail .video-thumbnail-img {
-        width: 100%;
-        height: 168px;
-        object-fit: cover;
-        border-radius: 20px;
-    }
-
-    .video-container {
-        height: auto;
-    }
-
-    .video-container iframe {
-        width: 100%;
-    }
-    
-    .video-description h2 {
-        font-size: 33.5px;
-    }
-    
-    .video-thumbnail {
-        height: fit-content;
-        width: fit-content;
-        position: relative;
-    }
-
-    .video-thumbnail .video-thumbnail-img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .play-button {
-        font-size: 16px;
-        width: 22vw;
-        height: 6vh;
-    }
-
-    .info-slides {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 10px;
-    }
-
-    .info-slide {
-        width: auto;
-    }
-
-    .info-slide p {
-        top: 25%;
-        font-size: 10px;
-        font-weight: 400;
-        line-height: 17.65px;
-        text-align: center;
-    }
-
-    .info-slide p img {
-        width: 10px;
-    }
-}
-
-@media (min-width: 1500px) {
-
-    .video-thumbnail {
-        height: 100%;
-    }
-
-    .video-container iframe {
-        width: 100%;
-    }
-    
-    .video-thumbnail .video-thumbnail-img {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 20px;
-    }
-
-    .video-thumbnail .video-thumbnail-img {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 20px;
     }
 }

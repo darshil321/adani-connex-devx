@@ -1,0 +1,365 @@
+/*
+.testimonial-container {
+    width: 100%;
+    max-width: 800px; 
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-image {
+    width: 10vh;
+    height: 12vh;
+    margin-right: 20px;
+    object-fit: contain;
+    border: 3px solid #ccc;
+}
+
+.testimonial-text {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    flex-grow: 1;
+}
+
+.testimonial-text::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 24px;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-right-color: #ffffff;
+    border-left: 0;
+}
+
+.quote {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.author {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .testimonial-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .testimonial-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .testimonial-text::before {
+        content: none;
+    }
+}
+*/
+
+/*
+.testimonial-section {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonial-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ccc;
+}
+
+.testimonial-content {
+    flex: 1;
+    background: #f0f4f8; 
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+.testimonial-quote {
+    font-size: 16px;
+    color: #333;
+    position: relative;
+    padding-left: 30px;
+}
+
+.testimonial-quote::before {
+    content: '“';
+    position: absolute;
+    left: 10px;
+    top: -30px;
+    font-size: 60px;
+    color: #1a73e8;
+}
+
+.testimonial-quote::after {
+    content: '”';
+    position: absolute;
+    top: 50px;
+    right: -10px;
+    bottom: -10px;
+    font-size: 60px;
+    color: #1a73e8;
+}
+
+.testimonial-author {
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+}
+*/
+
+body {
+    font-family: 'Roboto'
+}
+
+#testimonial-header {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 4vw;
+    margin: 0;
+    font-size: 34.5px;
+    font-weight: 500;
+    text-align: left;
+}
+
+#testimonial-disc {
+    padding-bottom: 50px;
+    padding-left: 4vw;
+    margin: 0;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+
+}
+
+.testimonial {
+    font-family: 'Roboto';
+    position: relative;
+}
+
+.testimonial-section {
+    position: relative;
+    /* width: 86vw; */
+    margin-left: 14.4vw;
+    margin-right: 10.2vw;
+    /* margin: auto; */
+    padding: 3px;
+    background: #ffffff;
+    border-radius: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-image {
+    z-index: 1;
+    position: absolute;
+    border-radius: 50%;
+    object-fit: contain;
+    left: -10%;
+    top: 58%;
+}
+
+.testimonial-content {
+    background: #EFF6FD;
+    padding: 20px;
+    border-radius: 35px;
+    position: relative;
+    padding-left: 140px;
+}
+
+.testimonial-quote {
+    width: 85%;
+    position: relative;
+    color: #4D4D4D;
+    font-family: 'Roboto';
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 37px;
+    text-align: left;
+
+
+}
+
+.testimonial-quote::before {
+    font-family: Arial, sans-serif;
+    content: '“';
+    position: absolute;
+    left: -75px;
+    top: 15px;
+    font-size: 130px;
+    color: #2F93FF;
+}
+
+.testimonial-quote::after {
+    font-family: Arial, sans-serif;
+    content: '”';
+    position: absolute;
+    right: -45px;
+    bottom: -60px;
+    font-size: 130px;
+    color: #2F93FF;
+}
+
+.testimonial-author {
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 3vw;
+    height: 5vh;
+    margin-right: 10px;
+    background-color: inherit;
+}
+
+.name-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.name {
+    font-size: 16px;
+    color: #333;
+    margin: 0px !important;
+    font-weight: bold;
+    line-height: normal
+}
+
+.title {
+    font-size: 14px;
+    color: #666;
+    margin: 0px !important;
+    line-height: normal
+}
+
+@media (max-width: 768px) {
+
+    #testimonial-header {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    #testimonial-disc {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .testimonial-section {
+        flex-direction: column;
+        width: auto;
+        margin-left: 0 !important;
+        align-items: center;
+        margin: auto;
+    }
+
+    .testimonial-image {
+        top: -55px;
+        left: 17%;
+        transform: translateX(-50%);
+    }
+
+    .testimonial-image img {
+        height: 20vh;
+        width: 50vw;
+    }
+
+    .testimonial-content {
+        /* padding: inherit; */
+        padding-left: 20px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        text-align: left;
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+
+    #testimonial-header {
+        font-size: 28px;
+    }
+
+    .testimonial-quote {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        text-align: left;
+
+        width: 100%;
+        padding-top: 13vh;
+    }
+
+    .testimonial-quote::before {
+        left: 0px;
+        padding-top: 8vh;
+    }
+
+    .testimonial-quote::after {
+        right: 10px;
+        padding-top: 8vh;
+    }
+
+    .profile-info {
+        justify-content: right;
+        width: 82vw;
+
+    }
+
+    .profile-icon {
+        width: 10vw;
+    }
+
+    .name-title .name {
+        font-size: 13.01px;
+        font-weight: 600;
+        line-height: 10.64px;
+        text-align: left;
+    }
+
+    .name-title .title {
+        font-size: 10.64px;
+        font-weight: 400;
+        line-height: 9.76px;
+        text-align: left;
+    }
+}

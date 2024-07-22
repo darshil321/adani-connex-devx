@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Scalable Solutions to Power Your Growth</title> -->
+    <link rel="stylesheet" href="./recognized-for-exellence.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="recognition-section">
+        <h2>Recognised for Excellence</h2>
+        <div class="carousel-wrapper">
+            <p>Chennai 1 data center stands as a testament to the dedication to pioneering advancements in sustainable
+                digital infrastructure. This commitment extends beyond innovation as evidenced by various certifications
+                and
+                industry recognition.</p>
+            <div class="carousel-controls-des">
+                <button class="control-left">‹</button>
+                <button class="control-right">›</button>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="card">
+                <div class="card-image">
+                    <img src="./../../assets/recognize-section-award-img-1.svg" alt="Tech Capital Global Awards">
+                </div>
+                <div class="card-content">
+                    <span>Certification</span>
+                    <h3>Digital Infrastructure Project of the Year at Tech Capital Global Awards 2023</h3>
+                    <p>Chennai 1, our flagship data center, has once again achieved remarkable international acclaim by
+                        the</p>
+                    <a href="#" class="know-more">Know more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="./../../assets/recognize-section-award-img-2.svg" alt="CIO Choice Award">
+                </div>
+                <div class="card-content">
+                    <span>Certification</span>
+                    <h3>CIO Choice – Best Integrated Data Center Solution Provider</h3>
+                    <p>This prestigious recognition is an acknowledgement of our commitment to promote innovation and
+                        excellence in our product/service offerings</p>
+                    <a href="#" class="know-more">Know more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="./../../assets/recognize-section-award-img-2.svg" alt="W. Media-Global Award">
+                </div>
+                <div class="card-content">
+                    <span>Certification</span>
+                    <h3>Digital Technology Inside the Data Center Award for EdgeOS</h3>
+                    <p>We’re honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global
+                        for our efforts with EdgeOS!</p>
+                    <a href="#" class="know-more">Know more</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="./../../assets/recognize-section-award-img-2.svg" alt="W. Media-Global Award">
+                </div>
+                <div class="card-content">
+                    <span>Certification</span>
+                    <h3>Digital Technology Inside the Data Center Award for EdgeOS</h3>
+                    <p>We’re honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global
+                        for our efforts with EdgeOS!</p>
+                    <a href="#" class="know-more">Know more</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-pagination">
+            <!-- <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span> -->
+        </div>
+        <div class="carousel-controls-mb">
+            <button class="control-left">‹</button>
+            <button class="control-right">›</button>
+        </div>
+    </div>
+
+    <script>
+        var caraousal = document.getElementsByClassName('carousel')[0];
+        var clientWidth = caraousal.clientWidth;
+        var currWidth = caraousal.scrollLeft + clientWidth;
+        var caraousalWidth = caraousal.scrollWidth;
+        var scrollRightDesktop = document.getElementsByClassName('control-right')?.[0];
+        var scrollLeftDesktop = document.getElementsByClassName('control-left')?.[0];
+        var scrollRightMobile = document.getElementsByClassName('control-right')?.[1];
+        var scrollLeftMobile = document.getElementsByClassName('control-left')?.[1];
+
+        var noOfCarousalDots = 4;
+        
+        if (Math.floor(caraousalWidth / clientWidth) == caraousalWidth / clientWidth) {
+            noOfCarousalDots = caraousalWidth / clientWidth;
+        } else {
+            noOfCarousalDots = Math.floor(caraousalWidth / clientWidth) + 1;
+        }
+
+        for (var i = 0; i < noOfCarousalDots; i++) {
+            var dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i == 0) {
+                dot.classList.add('active');
+            }
+            document.getElementsByClassName('carousel-pagination')[0].appendChild(dot);
+        }
+
+        // var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 405 - 40)/4; // 405 is the width of the card and some padding, 40 is the margin from both sides // TEMP_FIX
+        var scrollByPixel = caraousal.scrollWidth / noOfCarousalDots;
+
+        if (currWidth >= caraousalWidth) {
+            scrollRightDesktop.classList.add('controls-disabled');
+        }
+        if (currWidth <= clientWidth) {
+            scrollLeftDesktop.classList.add('controls-disabled');
+        }
+
+        if (currWidth <= clientWidth) {
+            scrollLeftMobile.classList.add('controls-disabled');
+        }
+        if (currWidth >= caraousalWidth) {
+            scrollRightMobile.classList.add('controls-disabled');
+        }
+
+        // When a user clicks on the right arrow, the ul will scroll 750px to the right
+        scrollRightDesktop.addEventListener('click', (event) => {
+
+            caraousal.scrollBy(scrollByPixel, 0);
+
+            var clientWidth = caraousal.clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth + scrollByPixel;
+            var caraousalWidth = caraousal.scrollWidth;
+
+            if (scrollLeftDesktop.classList.contains('controls-disabled')) {
+                scrollLeftDesktop.classList.remove('controls-disabled');
+            }
+
+            if (currWidth >= caraousalWidth) {
+                scrollRightDesktop.classList.add('controls-disabled');
+            }
+        });
+
+        // When a user clicks on the left arrow, the ul will scroll 750px to the left
+        scrollLeftDesktop.addEventListener('click', (event) => {
+
+            caraousal.scrollBy(-scrollByPixel, 0);
+
+            var clientWidth = caraousal.clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth - scrollByPixel;
+            var caraousalWidth = caraousal.scrollWidth;
+
+            if (scrollRightDesktop.classList.contains('controls-disabled')) {
+                scrollRightDesktop.classList.remove('controls-disabled');
+            }
+
+            if (currWidth <= clientWidth) {
+                scrollLeftDesktop.classList.add('controls-disabled');
+            }
+        });
+
+        // When a user clicks on the right arrow, the ul will scroll 750px to the right
+        scrollRightMobile.addEventListener('click', (event) => {
+
+            caraousal.scrollBy(scrollByPixel, 0);
+
+            var clientWidth = caraousal.clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth + scrollByPixel;
+            var caraousalWidth = caraousal.scrollWidth;
+
+            if (scrollLeftMobile.classList.contains('controls-disabled')) {
+                scrollLeftMobile.classList.remove('controls-disabled');
+            }
+
+            if (currWidth >= caraousalWidth) {
+                scrollRightMobile.classList.add('controls-disabled');
+            }
+        });
+
+        // When a user clicks on the left arrow, the ul will scroll 750px to the left
+        scrollLeftMobile.addEventListener('click', (event) => {
+
+            caraousal.scrollBy(-scrollByPixel, 0);
+
+            var clientWidth = caraousal.clientWidth;
+            var currWidth = caraousal.scrollLeft + clientWidth - scrollByPixel;
+            var caraousalWidth = caraousal.scrollWidth;
+
+            if (scrollRightMobile.classList.contains('controls-disabled')) {
+                scrollRightMobile.classList.remove('controls-disabled');
+            }
+
+            if (currWidth <= clientWidth) {
+                scrollLeftMobile.classList.add('controls-disabled');
+            }
+        });
+
+
+        var dots = document.getElementsByClassName('dot');
+        for (var i = 0; i < dots.length; i++) {
+            var currentDot = dots[i];
+            currentDot.classList.add(`${i}`);
+
+            currentDot.addEventListener('click', function (ele) {
+                var dotPosition = 0;
+                var caraousalWidth = caraousal.scrollWidth;
+
+                parseInt(ele.srcElement.classList.forEach((className) => {
+                    if (!isNaN(parseInt(className))) {
+                        dotPosition = parseInt(className);
+                    }
+                }));
+
+                var scrolledBy = scrollByPixel * dotPosition;
+
+                for (var j = 0; j < dots.length; j++) {
+                    dots[j].classList.remove('active');
+                }
+
+                ele.target.classList.add('active');
+
+                caraousal.scrollTo(scrolledBy, 0);
+
+                if (scrolledBy >= caraousalWidth) {
+                    scrollRightDesktop.classList.add('controls-disabled');
+                    scrollRightMobile.classList.add('controls-disabled');
+                }
+
+            });
+        }
+    </script>
+</body>
+
+</html>
