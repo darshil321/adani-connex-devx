@@ -1,0 +1,1679 @@
+
+/* 
+    Data Center Section
+*/
+
+.data-center-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Roboto';
+}
+
+.data-center-section .video-container {
+    position: relative;
+    width: -webkit-fill-available;
+    height: 68vh;
+    /* Adjust based on the size you need
+    background: url('path_to_your_video_thumbnail.jpg') center center / cover no-repeat; */
+}
+
+.data-center-section .video-container iframe {
+    width: 80%;
+    height: 100%;
+    border-radius: 20px;
+    display: none;
+}
+
+.data-center-section .video-thumbnail .video-thumbnail-img {
+    width: 80%;
+    height: 100%;
+}
+
+.data-center-section .play-button {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    /* Size of the play button */
+    height: 60px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 25%;
+    font-size: 30px;
+    /* Adjust the size of the play icon */
+    cursor: pointer;
+}
+
+.data-center-section .video-description h2 {
+    color: #000;
+    margin-bottom: auto;
+    font-size: 34.5px;
+    font-weight: 400;
+    line-height: 45px;
+    text-align: center; 
+}
+
+.data-center-section .video-description p {
+    color: #666;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+}
+
+.data-center-section .info-slides {
+    display: flex;
+    justify-content: center;
+    /* width: 90%; */
+    gap: 0.75vw;
+    margin-top: 1vh;
+}
+
+.data-center-section .info-slide {
+    width: 12.5vw;
+    position: relative;
+}
+
+.data-center-section .info-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.data-center-section .info-slide p img {
+    width: 15.13px;
+    height: 17.88px;
+    top: 2.06px;
+    left: 5.5px;
+    gap: 0px;
+    opacity: 0px;    
+}
+
+.data-center-section .info-slide p {
+    width: auto;
+    text-wrap: nowrap;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    color: #333;
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: flex;
+    gap: 0.4vw;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* @media (max-width: 1024px) {
+
+    .video-container {
+        width: auto;
+        height: auto
+    }
+
+    .data-center-section {
+        width: fit-content;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 40px;
+        text-align: center;
+        padding: 24px;
+        overflow: hidden;
+    }
+
+    .desc-parent {
+        width: 80%;
+    }
+
+    .video-description p {
+        padding-bottom: 20px;
+    }
+
+    .video-container {
+        padding-bottom: 20px;
+    }
+
+    .info-slides {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 72px;
+        column-gap: 27.98px;
+    }
+
+    .info-slide {
+        width: auto;
+    }
+
+    .info-slide p {
+        top: 40%;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17.65px;
+        text-align: center;
+    }
+} */
+
+@media (max-width: 768px) {
+
+    .data-center-section .video-thumbnail {
+        height: 100%;
+    }
+
+    .data-center-section .video-thumbnail .video-thumbnail-img {
+        width: 100%;
+        height: 168px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .data-center-section .video-container {
+        height: auto;
+    }
+
+    .data-center-section .video-container iframe {
+        width: 100%;
+    }
+    
+    .data-center-section .video-description h2 {
+        font-size: 33.5px;
+    }
+    
+    .data-center-section .video-thumbnail {
+        height: fit-content;
+        width: fit-content;
+        position: relative;
+    }
+
+    .data-center-section .video-thumbnail .video-thumbnail-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .data-center-section .play-button {
+        font-size: 16px;
+        width: 22vw;
+        height: 6vh;
+    }
+
+    .data-center-section .info-slides {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+    }
+
+    .data-center-section .info-slide {
+        width: auto;
+    }
+
+    .data-center-section .info-slide p {
+        top: 25%;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 17.65px;
+        text-align: center;
+    }
+
+    .data-center-section .info-slide p img {
+        width: 10px;
+    }
+}
+
+@media (min-width: 1500px) {
+
+    .data-center-section .video-thumbnail {
+        height: 100%;
+    }
+
+    .data-center-section .video-container iframe {
+        width: 100%;
+    }
+    
+    .data-center-section .video-thumbnail .video-thumbnail-img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .data-center-section .video-thumbnail .video-thumbnail-img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+}
+
+
+
+/*
+    Pioneering Safety Excellence
+*/
+
+.pioneering-safety-section {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    max-width: 93vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.pioneering-safety-section h2 {
+    color: #333;
+    font-size: 34.5px;
+    font-weight: 400;
+    line-height: 45px;
+    text-align: left;
+    margin: 0px;
+}
+
+.pioneering-safety-section p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: left;
+}
+
+.pioneering-safety-section .carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scrollbar-width: none;
+    /* Hides the scrollbar in Firefox */
+    -ms-overflow-style: none;
+    /* Hides the scrollbar in Internet Explorer and Edge */
+    scroll-behavior: smooth;
+}
+
+.pioneering-safety-section .carousel::-webkit-scrollbar {
+    display: none;
+    /* Hides the scrollbar in Chrome, Safari, and Opera */
+}
+
+.pioneering-safety-section .card {
+    flex: 0 0 auto;
+    width: 400px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.pioneering-safety-section .card-image {
+    background: #f0f0f0;
+}
+
+.pioneering-safety-section .card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.pioneering-safety-section .card-content {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    gap: 1vh;
+    text-align: left;
+    height: 100%;
+}
+
+.pioneering-safety-section .card-content h3 {
+    color: #333;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 21px;
+    text-align: left;
+    margin: 0px;
+}
+
+.pioneering-safety-section .card-content p {
+    color: #666;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    margin: 0px;
+}
+
+.pioneering-safety-section .card-content span {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #565656;
+    margin: 0px;
+    margin-top: 1vh;
+}
+
+.pioneering-safety-section .know-more {
+    align-self: flex-start;
+    color: #2F93FF;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: left;
+    margin: 0px;
+}
+
+.pioneering-safety-section .carousel-wrapper {
+    display: flex;
+    align-items: center;
+    /* Vertical alignment */
+    /* justify-content: space-between; Space between the text and controls */
+    /* padding: 20px; Optional padding for better spacing */
+}
+
+.pioneering-safety-section .carousel-wrapper p {
+    width: 75%;
+    /* flex: 1; Takes up the majority of space */
+    padding-right: 20px;
+    /* Ensures some space between the text and controls */
+}
+
+/* .carousel-control:hover {
+    background-color: #0056b3;
+} */
+
+.pioneering-safety-section .carousel-pagination {
+    position: relative;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.pioneering-safety-section .dot {
+    height: 7px;
+    width: 7px;
+    margin: 15px 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.pioneering-safety-section .dot.active {
+    background-color: #333;
+}
+
+@media (max-width: 425px) {
+
+    .pioneering-safety-section .card {
+        width: fit-content;
+    }
+
+    .pioneering-safety-section .card-content h3 {
+        color: #333;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 13.57px;
+        text-align: left;
+        margin: 0px;
+    }
+
+    .pioneering-safety-section .card-content p {
+        color: #666;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        margin: 0px;
+    }
+
+    .pioneering-safety-section .card-content span {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 13.57px;
+        text-align: left;
+        color: #565656;
+        margin: 0px;
+        margin-top: 1vh;
+    }
+
+    .pioneering-safety-section .know-more {
+        align-self: flex-start;
+        color: #2F93FF;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 13.57px;
+        text-align: left;
+        margin: 0px;
+    }
+}
+
+
+
+/*
+    Recognized For Exellence Section
+*/
+
+.recognition-section {
+    max-width: 93vw;
+    margin: auto;
+    padding: 20px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+.recognition-section h2 {
+    color: #333;
+    font-size: 34.5px;
+    font-weight: 400;
+    line-height: 45px;
+    text-align: left;
+    margin: 0px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.recognition-section p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 23px;
+    text-align: left;
+}
+
+.recognition-section .carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scrollbar-width: none;
+    /* Hides the scrollbar in Firefox */
+    -ms-overflow-style: none;
+    /* Hides the scrollbar in Internet Explorer and Edge */
+    scroll-behavior: smooth;
+}
+
+.recognition-section .carousel::-webkit-scrollbar {
+    display: none;
+    /* Hides the scrollbar in Chrome, Safari, and Opera */
+}
+
+.recognition-section .card {
+    flex: 0 0 auto;
+    width: 400px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.recognition-section .card-image {
+    background: #f0f0f0;
+}
+
+.recognition-section .card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.recognition-section .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    height: 100%;
+}
+
+
+.recognition-section .card-content h3 {
+    color: #333;
+    margin: 10px 0 5px 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 21px;
+    text-align: left;
+
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+}
+
+.recognition-section .card-content span {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #565656;
+}
+
+.recognition-section .know-more {
+    align-self: flex-start;
+    padding: 10px 0;
+    color: #2F93FF;
+    text-decoration: none;
+    margin-top: auto;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: left;
+}
+
+.recognition-section .carousel-wrapper {
+    display: flex;
+    align-items: center;
+    /* Vertical alignment */
+    /* justify-content: space-between; Space between the text and controls */
+    /* padding: 20px; Optional padding for better spacing */
+}
+
+.recognition-section .carousel-wrapper p {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.recognition-section .carousel-controls-des {
+    padding-left: 10vw;
+    display: flex;
+    align-items: center;
+    gap: 1.5vw
+}
+
+.recognition-section .carousel-controls-mb {
+    display: none;
+}
+
+.recognition-section .control-left,
+.recognition-section .control-right {
+    height: 4.5vh;
+    width: 2.4vw;
+    background-color: #2F93FF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0px 2px 7.3px 0px #00000038;
+    font-size: 25px;
+}
+
+.recognition-section .controls-disabled {
+    background: #B8C4D1 !important;
+}
+
+/* .control-left:hover,
+.control-right:hover {
+    background-color: #0056b3;
+} */
+
+/* .carousel-control:hover {
+    background-color: #0056b3;
+} */
+
+.recognition-section .carousel-pagination {
+    position: relative;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.recognition-section .dot {
+    height: 7px;
+    width: 7px;
+    margin: 15px 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.recognition-section .dot.active {
+    background-color: #333;
+}
+
+@media (max-width: 425px) {
+
+    .recognition-section .recognition-section {
+        padding: 0px;
+    }
+
+    .recognition-section .carousel-controls-mb {
+        display: flex;
+        justify-content: center;
+        gap: 5vw;
+    }
+
+    .recognition-section .control-left,
+    .recognition-section .control-right {
+        width: 10.5vw;
+    }
+
+    .recognition-section .carousel-controls-des {
+        display: none;
+    }
+
+    .recognition-section .carousel-wrapper p {
+        width: auto;
+    }
+
+    .recognition-section .carousel-pagination {
+        display: none;
+    }
+
+    .recognition-section .card {
+        width: fit-content;
+    }
+}
+
+
+
+/*
+    Safety Section
+*/
+
+.safety-section {
+    max-width: 93vw;
+    /* margin: auto; */
+    margin-right: 12.5vh;
+    margin-left: 12.5vh;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Roboto';
+}
+
+.safety-section h2 {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: left;
+    color: #000;
+    margin: 0px;
+}
+
+.safety-section p {
+    margin-bottom: 20px;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #4D4D4D;
+
+}
+
+.safety-section .safety-class-wrapper {
+    overflow-x: scroll;
+    width: 100%;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+
+    /* Hide scrollbar for Internet Explorer and other browsers */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    scroll-behavior: smooth;
+}
+
+.safety-section .safety-cards {
+    display: flex;
+    width: 1200px;
+    gap: 35px;
+    justify-content: space-between;
+}
+
+.safety-section .safety-card {
+    width: 100%;
+    background-color: #F8F8F8;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+}
+
+.safety-section .safety-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.safety-section .safety-image-desc {
+    padding: 15px;
+}
+
+.safety-section .safety-image-desc h3 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    text-align: left;
+    color: #000;
+}
+
+.safety-section .safety-image-desc p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    color: #4D4D4D;
+
+}
+
+.safety-section .safety-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: url('./../../assets/play-button.svg') no-repeat center;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+} */
+.safety-section .play-button {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    width: 10vw;
+    height: 10vh;
+    /* Adjust size as needed */
+    background: url('./../../assets/play-button.svg') no-repeat center;
+    background-size: 50%;
+    /* Adjust the size of the icon inside the button */
+    border: none;
+    border-radius: 50%;
+    /* Makes it circular */
+    cursor: pointer;
+    outline: none;
+}
+
+
+.safety-section .safety-card h3 {
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.safety-section .safety-card p {
+    font-size: 14px;
+}
+
+/* 
+.download-button {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-radius: 25px;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow {
+    font-size: 10px;
+    margin-left: 5px;
+} */
+
+.safety-section .dropdown {
+    margin: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 25px;
+    /* Rounded corners */
+}
+
+.safety-section .download-button {
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    /* align-items: stretch; */
+    justify-content: space-around;
+    background-color: #ffffff;
+    border: 1px solid #B6B6B61A;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 50%, #FBFBFB 100%);
+    border-radius: 12px;
+    cursor: pointer;
+    align-items: center;
+    width: 28vh;
+    height: 7vh;
+    outline: none;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: left;
+    color: #000000
+}
+
+.safety-section .arrow-down {
+    border: solid #333333;
+    /* Color of arrow */
+    border-width: 0 2px 2px 0;
+    /* Triangle shape */
+    display: inline-block;
+    padding: 3px;
+    /* Size of arrow */
+    transform: rotate(45deg);
+    /* Rotate to point down */
+    margin-left: 10px;
+    /* Space from text */
+}
+
+
+.safety-section .dropdown-content {
+    display: none;
+    transition: all 2s ease-in-out;
+    /* Hide dropdown content by default */
+    top: 80%;
+    border-radius: 10px;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: left;
+    color: #000000
+}
+
+.safety-section .dropdown-content .dropdown-li {
+    display: flex;
+    flex-direction: row;
+}
+
+.safety-section .dropdown-content .dropdown-li p {
+    margin: 0px;
+}
+
+.safety-section .safety-title-disc-download-dropdown {
+    display: flex;
+}
+
+.safety-section .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.safety-section .dropdown-content a:hover {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+
+.safety-section .carousel-controls-mb {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .safety-section {
+        width: 100%;
+        margin: auto;
+    }
+
+    .safety-section h2 {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 40px;
+        text-align: left;
+    }
+
+    .safety-section p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        text-align: left;
+    }
+
+    .safety-section .safety-cards {
+        flex-direction: row;
+    }
+
+    .safety-section .dropdown {
+        display: none;
+    }
+
+    .safety-section .safety-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .safety-section .play-button {
+        top: 50%;
+        left: 10%;
+        width: 30vw;
+        height: 7vh;
+    }
+
+    .safety-section .carousel-controls-mb {
+        display: flex;
+        justify-content: center;
+        gap: 4vw
+    }
+
+    .safety-section .carousel {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding: 20px 0;
+        scrollbar-width: none;
+        /* Hides the scrollbar in Firefox */
+        -ms-overflow-style: none;
+        /* Hides the scrollbar in Internet Explorer and Edge */
+        scroll-behavior: smooth;
+    }
+
+    .safety-section .carousel::-webkit-scrollbar {
+        display: none;
+        /* Hides the scrollbar in Chrome, Safari, and Opera */
+    }
+
+
+    .safety-section .carousel-wrapper {
+        display: flex;
+        align-items: center;
+        /* Vertical alignment */
+        /* justify-content: space-between; Space between the text and controls */
+        /* padding: 20px; Optional padding for better spacing */
+    }
+
+    .safety-section .carousel-wrapper p {
+        padding-right: 15px;
+        padding-left: 15px;
+        width: auto;
+    }
+
+
+    .safety-section .control-left,
+    .safety-section .control-right {
+        height: 4.5vh;
+        width: 10.5vw;
+        background-color: #2F93FF;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0px 2px 7.3px 0px #00000038;
+        font-size: 25px;
+    }
+
+    .safety-section .controls-disabled {
+        background: #B8C4D1 !important;
+    }
+}
+
+
+
+/*
+    Scroll Animation Section
+*/
+
+.scroll-animation-section {
+    height: 86vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-image: url('./../../assets/scroll-animation-section-desktop-bg.svg');
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9fafb;
+}
+
+.scroll-animation-section .title {
+    text-align: left;
+    margin-bottom: 20px;
+    max-width: 75%;
+    font-family: "Roboto";
+}
+
+.scroll-animation-section .title .heading {
+    margin-bottom: 16px !important;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 44.98px;
+    text-align: left;
+}
+
+.scroll-animation-section .title .desc {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    color: #4D4D4D;
+}
+
+.scroll-animation-section .section-container {
+    width: 100%;
+    display: flex;
+    border-radius: 12px;
+    padding-top: 5vh;
+    /* overflow: hidden; */
+}
+
+.scroll-animation-section .sidebar {
+    width: 25%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    box-shadow: none;
+}
+
+.scroll-animation-section .sidebar a {
+    display: block;
+    padding: 20px;
+    margin-bottom: 0;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.scroll-animation-section .sidebar a.active,
+.scroll-animation-section .sidebar a:hover {
+    background-color: #EFF6FD;
+    color: #2F93FF;
+    border: none;
+}
+
+.scroll-animation-section .content {
+    width: 75%;
+    padding: 20px;
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-animation-section .card {
+    padding: 15px;
+    position: absolute;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    /* transition: opacity 750ms linear, transform 750ms linear; */
+    transition: transform 750ms linear;
+    display: flex;
+    border-radius: 16px;
+    background-color: #FAFCFE;
+    gap: 24px;
+    padding: 20px;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 12px 45px 0px #23232317;
+    transform: translateY(100px);
+    /* opacity: 0; */
+    z-index: 1;
+}
+
+.scroll-animation-section .card.invisible.zi4 {
+    z-index: 4;
+}
+
+.scroll-animation-section .card.invisible {
+    opacity: 0;
+}
+
+.scroll-animation-section .card.active {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 4;
+}
+
+.scroll-animation-section .card.previous-1 {
+    transform: translateY(-39px) scale(0.9);
+    opacity: 1;
+    z-index: 3;
+}
+
+.scroll-animation-section .card.previous-2 {
+    transform: translateY(-75px) scale(0.8);
+    opacity: 1;
+    z-index: 2;
+}
+
+.scroll-animation-section .card.previous-3 {
+    transform: translateY(-110px) scale(0.7);
+    opacity: 1;
+    z-index: 1;
+}
+
+.scroll-animation-section .card.reverse-1 {
+    transform: translateY(39px) scale(1);
+    opacity: 0;
+    transition: transform 750ms linear, opacity 750ms linear;
+    z-index: 4;
+}
+
+.scroll-animation-section .card.reverse-2 {
+    transform: translateY(75px) scale(1);
+    opacity: 0;
+    transition: transform 750ms linear, opacity 750ms linear;
+    z-index: 4;
+}
+
+.scroll-animation-section .card.reverse-3 {
+    transform: translateY(110px) scale(1);
+    opacity: 0;
+    transition: transform 750ms linear, opacity 750ms linear;
+    z-index: 4;
+}
+
+.scroll-animation-section .card img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.scroll-animation-section .card-content {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.scroll-animation-section .card-content h2 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35.16px;
+    text-align: left;
+    color: #000000;
+    margin: 0px;
+}
+
+.scroll-animation-section .card-content p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: left;
+    color: #444444;
+    margin: 0px;
+}
+
+.scroll-animation-section .card-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 25.78px;
+    text-align: left;
+    color: #33405A;
+    margin: 0px;
+}
+
+.scroll-animation-section .card-content ul {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+}
+
+.scroll-animation-section .key-advantages-grid {
+    display: grid;
+    width: 86%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+    align-items: center;
+}
+
+.scroll-animation-section .card-content .key-advantages-grid li {
+    /* margin-bottom: 10px; */
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+    text-align: left;
+    color: #000F36;
+}
+
+.scroll-animation-section .card-content .key-advantages-grid li img {
+    width: 3vw;
+    height: 5vh;
+    margin-right: 10px;
+}
+
+.scroll-animation-section .buttons {
+    margin-top: 3.4vh;
+    display: flex;
+    gap: 10px;
+}
+
+/* Style for 'Discover More' button to be filled */
+.scroll-animation-section .buttons .discover-more {
+    background-color: #2F93FF; /* Blue background */
+    color: black; /* White text color */
+    padding: 10px 20px; /* Padding around the text */
+    font-size: 16px; /* Appropriate text size */
+    border: 2px solid #2F93FF; /* Blue border matching the background */
+    border-radius: 25px; /* Large border radius for rounded edges */
+    text-align: center;
+    text-decoration: none; /* Removes underline from links if it's an <a> tag */
+    display: inline-block; /* Allows width and height to work */
+    cursor: pointer; /* Shows a pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.scroll-animation-section .buttons .discover-more:hover,
+.scroll-animation-section .buttons .discover-more:focus {
+    background-color: #0056b3; /* Slightly darker blue on hover */
+    color: white; /* Maintain white text on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slight shadow for a "lift" effect */
+}
+
+/* Updated style for 'Connect With A DC Advisor' button to increase emphasis */
+.scroll-animation-section .buttons .connect-btn {
+    background-color: #0056b3; /* Darker blue background for more emphasis */
+    color: white; /* White text color */
+    padding: 12px 24px; /* Slightly larger padding for a bigger button */
+    font-size: 16px; /* Consistent font size with other buttons */
+    border: none; /* No border for a filled button */
+    border-radius: 20px; /* Rounded edges, less pill-like than 25px */
+    text-align: center;
+    text-decoration: none; /* Removes underline from links if it's an <a> tag */
+    display: inline-block; /* Allows width and height to work */
+    cursor: pointer; /* Shows a pointer cursor on hover */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.scroll-animation-section .buttons .connect-btn:hover,
+.scroll-animation-section .buttons .connect-btn:focus {
+    background-color: #003a70; /* Even darker blue on hover for depth effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slight shadow for a "lift" effect */
+}
+
+.scroll-animation-section .buttons a:nth-child(1) {
+    background-color: #fff;
+    color: #2F93FF;
+    border: 1px solid #2F93FF;
+}
+
+.scroll-animation-section .buttons a:nth-child(1):hover {
+    background-color: #2F93FF;
+    color: #fff;
+}
+
+.scroll-animation-section .buttons a:nth-child(2) {
+    background-color: #2F93FF;
+    color: #fff;
+}
+
+.scroll-animation-section .buttons a:nth-child(2):hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 430px) {
+    .scroll-animation-section{
+        height: auto;
+    }
+
+    .scroll-animation-section .title {
+        max-width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .scroll-animation-section .section-container {
+        flex-direction: column;
+        padding-top: 0px;
+    }
+
+    .scroll-animation-section .sidebar {
+        width: 100%;
+        display: grid;
+        padding: 0%;
+        margin-bottom: 5vh;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .scroll-animation-section .sidebar a {
+        font-size: 16px !important;
+        padding-right: 1.1vw;
+        padding-left: 1.1vw;
+        margin: 0px;
+        text-align: center;
+    }
+
+    .scroll-animation-section .content {
+        height: 100vh;
+    }
+
+    .scroll-animation-section .card {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .scroll-animation-section .card img {
+        height: 20vh;
+    }
+
+    .scroll-animation-section .buttons {
+        display: none;
+    }
+
+    .scroll-animation-section .card-content {
+        gap: 15px;
+    }
+
+    .scroll-animation-section .card-content p {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+    }
+
+    .scroll-animation-section .card-content .key-advantages-grid {
+        width: auto;
+    }
+
+    .scroll-animation-section .card-content .key-advantages-grid li {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.06px;
+        text-align: left;
+    }
+
+    .scroll-animation-section .card-content .key-advantages-grid li img {
+        width: 5vw;
+    }
+}
+
+
+
+/*
+    Testimonial Section
+*/
+
+
+#testimonial-header {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 4vw;
+    margin: 0;
+    font-size: 34.5px;
+    font-weight: 500;
+    text-align: left;
+    font-family: 'Roboto'
+}
+
+#testimonial-disc {
+    padding-bottom: 50px;
+    padding-left: 4vw;
+    margin: 0;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+
+}
+
+.testimonial {
+    font-family: 'Roboto';
+    position: relative;
+}
+
+.testimonial-section {
+    position: relative;
+    /* width: 86vw; */
+    margin-left: 14.4vw;
+    margin-right: 10.2vw;
+    /* margin: auto; */
+    padding: 3px;
+    background: #ffffff;
+    border-radius: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-section .testimonial-image {
+    z-index: 1;
+    position: absolute;
+    border-radius: 50%;
+    object-fit: contain;
+    left: -10%;
+    top: 58%;
+}
+
+.testimonial-section .testimonial-content {
+    background: #EFF6FD;
+    padding: 20px;
+    border-radius: 35px;
+    position: relative;
+    padding-left: 140px;
+}
+
+.testimonial-section .testimonial-quote {
+    width: 85%;
+    position: relative;
+    color: #4D4D4D;
+    font-family: 'Roboto';
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 37px;
+    text-align: left;
+
+
+}
+
+.testimonial-section .testimonial-quote::before {
+    font-family: Arial, sans-serif;
+    content: '“';
+    position: absolute;
+    left: -75px;
+    top: 15px;
+    font-size: 130px;
+    color: #2F93FF;
+}
+
+.testimonial-section .testimonial-quote::after {
+    font-family: Arial, sans-serif;
+    content: '”';
+    position: absolute;
+    right: -45px;
+    bottom: -60px;
+    font-size: 130px;
+    color: #2F93FF;
+}
+
+.testimonial-section .testimonial-author {
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.testimonial-section .profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-section .profile-icon {
+    width: 3vw;
+    height: 5vh;
+    margin-right: 10px;
+    background-color: inherit;
+}
+
+.testimonial-section .name-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.testimonial-section .name {
+    font-size: 16px;
+    color: #333;
+    margin: 0px !important;
+    font-weight: bold;
+    line-height: normal
+}
+
+.testimonial-section .title {
+    font-size: 14px;
+    color: #666;
+    margin: 0px !important;
+    line-height: normal
+}
+
+@media (max-width: 768px) {
+
+    .testimonial-section #testimonial-header {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .testimonial-section #testimonial-disc {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .testimonial-section {
+        flex-direction: column;
+        width: auto;
+        margin-left: 0 !important;
+        align-items: center;
+        margin: auto;
+    }
+
+    .testimonial-section .testimonial-image {
+        top: -55px;
+        left: 17%;
+        transform: translateX(-50%);
+    }
+
+    .testimonial-section .testimonial-image img {
+        height: 20vh;
+        width: 50vw;
+    }
+
+    .testimonial-section .testimonial-content {
+        /* padding: inherit; */
+        padding-left: 20px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        text-align: left;
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+
+    .testimonial-section #testimonial-header {
+        font-size: 28px;
+    }
+
+    .testimonial-section .testimonial-quote {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        text-align: left;
+
+        width: 100%;
+        padding-top: 13vh;
+    }
+
+    .testimonial-section .testimonial-quote::before {
+        left: 0px;
+        padding-top: 8vh;
+    }
+
+    .testimonial-section .testimonial-quote::after {
+        right: 10px;
+        padding-top: 8vh;
+    }
+
+    .testimonial-section .profile-info {
+        justify-content: right;
+        width: 82vw;
+
+    }
+
+    .testimonial-section .profile-icon {
+        width: 10vw;
+    }
+
+    .testimonial-section .name-title .name {
+        font-size: 13.01px;
+        font-weight: 600;
+        line-height: 10.64px;
+        text-align: left;
+    }
+
+    .testimonial-section .name-title .title {
+        font-size: 10.64px;
+        font-weight: 400;
+        line-height: 9.76px;
+        text-align: left;
+    }
+}
+    
