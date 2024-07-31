@@ -108,10 +108,10 @@
 
 
     <script>
-        var caraousal = document.getElementsByClassName('carousel')[0];
-        var clientWidth = caraousal.clientWidth;
-        var currWidth = caraousal.scrollLeft + clientWidth;
-        var caraousalWidth = caraousal.scrollWidth;
+        var carousel = document.getElementsByClassName('carousel')[0];
+        var clientWidth = carousel.clientWidth;
+        var currWidth = carousel.scrollLeft + clientWidth;
+        var caraousalWidth = carousel.scrollWidth;
 
         var noOfCarousalDots = 4;
 
@@ -131,7 +131,7 @@
         }
 
         // var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 430 - 40 - 40)/4; // 405 is the width of the card and some padding, 40 is the margin from both sides, 40 is the gap between cards // TEMP_FIX
-        var scrollByPixel = caraousal.scrollWidth / noOfCarousalDots;
+        var scrollByPixel = carousel.scrollWidth / noOfCarousalDots;
 
         var dots = document.getElementsByClassName('dot');
         for (var i = 0; i < dots.length; i++) {
@@ -140,9 +140,9 @@
 
             currentDot.addEventListener('click', function (ele) {
                 var dotPosition = 0;
-                var caraousalWidth = caraousal.scrollWidth;
-                var clientWidth = caraousal.clientWidth;
-                var currWidth = caraousal.scrollLeft + clientWidth;
+                var caraousalWidth = carousel.scrollWidth;
+                var clientWidth = carousel.clientWidth;
+                var currWidth = carousel.scrollLeft + clientWidth;
 
                 parseInt(ele.srcElement.classList.forEach((className) => {
                     if (!isNaN(parseInt(className))) {
@@ -158,10 +158,70 @@
 
                 ele.target.classList.add('active');
 
-                caraousal.scrollTo(scrolledBy, 0);
+                carousel.scrollTo(scrolledBy, 0);
 
             });
         }
+
+
+        // auto scroll effect
+
+        let isUserInteracting = false;
+        let autoScrollInterval;
+        let carousalPaginationSection = document.getElementsByClassName('carousel-pagination')[0];
+        let originalCarouselInnerHTML = carousel.innerHTML;
+
+        // // Duplicate the content to create a seamless loop
+        // carousel.innerHTML += carousel.innerHTML;
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                if (!isUserInteracting) {
+                    let maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+                    if (carousel.scrollLeft >= maxScrollLeft ) {
+                         // Duplicate the content to create a seamless loop
+                        carousel.innerHTML += carousel.innerHTML;
+                        resumeAutoScroll();
+                        // carousel.scrollLeft += 10; // Reset scroll position
+                    } else {
+                        carousel.scrollLeft += 10; // Adjust this value for scroll speed
+                    }
+                }
+            }, 50); // Adjust the speed by changing the interval time
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        function resumeAutoScroll() {
+            isUserInteracting = false;
+            startAutoScroll();
+        }
+
+        function handleUserInteraction() {
+            isUserInteracting = true;
+            stopAutoScroll();
+            carousel.innerHTML = originalCarouselInnerHTML;
+        }
+
+        // Listen for user interactions
+        carousel.addEventListener('mousedown', handleUserInteraction);
+        carousel.addEventListener('touchstart', handleUserInteraction);
+        carousel.addEventListener('wheel', handleUserInteraction);
+        
+        carousalPaginationSection.addEventListener('click', () => { 
+            handleUserInteraction();
+            setTimeout(resumeAutoScroll, 3000);
+        });
+
+        // Resume auto-scroll after user interaction ends
+        carousel.addEventListener('mouseup', () => setTimeout(resumeAutoScroll, 3000));
+        carousel.addEventListener('touchend', () => setTimeout(resumeAutoScroll, 3000));
+        carousel.addEventListener('mouseleave', () => setTimeout(resumeAutoScroll, 3000));
+
+        startAutoScroll();
+
     </script>
 
 </body>

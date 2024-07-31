@@ -90,10 +90,10 @@
     </div>
 
     <script>
-        var caraousal = document.getElementsByClassName('carousel')[0];
-        var clientWidth = caraousal.clientWidth;
-        var currWidth = caraousal.scrollLeft + clientWidth;
-        var caraousalWidth = caraousal.scrollWidth;
+        var carousel = document.getElementsByClassName('carousel')[0];
+        var clientWidth = carousel.clientWidth;
+        var currWidth = carousel.scrollLeft + clientWidth;
+        var caraousalWidth = carousel.scrollWidth;
         var scrollRightDesktop = document.getElementsByClassName('control-right')?.[0];
         var scrollLeftDesktop = document.getElementsByClassName('control-left')?.[0];
         var scrollRightMobile = document.getElementsByClassName('control-right')?.[1];
@@ -117,7 +117,7 @@
         }
 
         // var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 405 - 40)/4; // 405 is the width of the card and some padding, 40 is the margin from both sides // TEMP_FIX
-        var scrollByPixel = caraousal.scrollWidth / noOfCarousalDots;
+        var scrollByPixel = carousel.scrollWidth / noOfCarousalDots;
 
         if (currWidth >= caraousalWidth) {
             scrollRightDesktop.classList.add('controls-disabled');
@@ -136,11 +136,11 @@
         // When a user clicks on the right arrow, the ul will scroll 750px to the right
         scrollRightDesktop.addEventListener('click', (event) => {
 
-            caraousal.scrollBy(scrollByPixel, 0);
+            carousel.scrollBy(scrollByPixel, 0);
 
-            var clientWidth = caraousal.clientWidth;
-            var currWidth = caraousal.scrollLeft + clientWidth + scrollByPixel;
-            var caraousalWidth = caraousal.scrollWidth;
+            var clientWidth = carousel.clientWidth;
+            var currWidth = carousel.scrollLeft + clientWidth + scrollByPixel;
+            var caraousalWidth = carousel.scrollWidth;
 
             if (scrollLeftDesktop.classList.contains('controls-disabled')) {
                 scrollLeftDesktop.classList.remove('controls-disabled');
@@ -154,11 +154,11 @@
         // When a user clicks on the left arrow, the ul will scroll 750px to the left
         scrollLeftDesktop.addEventListener('click', (event) => {
 
-            caraousal.scrollBy(-scrollByPixel, 0);
+            carousel.scrollBy(-scrollByPixel, 0);
 
-            var clientWidth = caraousal.clientWidth;
-            var currWidth = caraousal.scrollLeft + clientWidth - scrollByPixel;
-            var caraousalWidth = caraousal.scrollWidth;
+            var clientWidth = carousel.clientWidth;
+            var currWidth = carousel.scrollLeft + clientWidth - scrollByPixel;
+            var caraousalWidth = carousel.scrollWidth;
 
             if (scrollRightDesktop.classList.contains('controls-disabled')) {
                 scrollRightDesktop.classList.remove('controls-disabled');
@@ -172,11 +172,11 @@
         // When a user clicks on the right arrow, the ul will scroll 750px to the right
         scrollRightMobile.addEventListener('click', (event) => {
 
-            caraousal.scrollBy(scrollByPixel, 0);
+            carousel.scrollBy(scrollByPixel, 0);
 
-            var clientWidth = caraousal.clientWidth;
-            var currWidth = caraousal.scrollLeft + clientWidth + scrollByPixel;
-            var caraousalWidth = caraousal.scrollWidth;
+            var clientWidth = carousel.clientWidth;
+            var currWidth = carousel.scrollLeft + clientWidth + scrollByPixel;
+            var caraousalWidth = carousel.scrollWidth;
 
             if (scrollLeftMobile.classList.contains('controls-disabled')) {
                 scrollLeftMobile.classList.remove('controls-disabled');
@@ -190,11 +190,11 @@
         // When a user clicks on the left arrow, the ul will scroll 750px to the left
         scrollLeftMobile.addEventListener('click', (event) => {
 
-            caraousal.scrollBy(-scrollByPixel, 0);
+            carousel.scrollBy(-scrollByPixel, 0);
 
-            var clientWidth = caraousal.clientWidth;
-            var currWidth = caraousal.scrollLeft + clientWidth - scrollByPixel;
-            var caraousalWidth = caraousal.scrollWidth;
+            var clientWidth = carousel.clientWidth;
+            var currWidth = carousel.scrollLeft + clientWidth - scrollByPixel;
+            var caraousalWidth = carousel.scrollWidth;
 
             if (scrollRightMobile.classList.contains('controls-disabled')) {
                 scrollRightMobile.classList.remove('controls-disabled');
@@ -213,7 +213,7 @@
 
             currentDot.addEventListener('click', function (ele) {
                 var dotPosition = 0;
-                var caraousalWidth = caraousal.scrollWidth;
+                var caraousalWidth = carousel.scrollWidth;
 
                 parseInt(ele.srcElement.classList.forEach((className) => {
                     if (!isNaN(parseInt(className))) {
@@ -229,7 +229,7 @@
 
                 ele.target.classList.add('active');
 
-                caraousal.scrollTo(scrolledBy, 0);
+                carousel.scrollTo(scrolledBy, 0);
 
                 if (scrolledBy >= caraousalWidth) {
                     scrollRightDesktop.classList.add('controls-disabled');
@@ -238,6 +238,82 @@
 
             });
         }
+
+
+        // auto scroll effect
+
+        let isUserInteracting = false;
+        let autoScrollInterval;
+        let carousalPaginationSection = document.getElementsByClassName('carousel-pagination')[0];
+        let originalCarouselInnerHTML = carousel.innerHTML;
+
+        // // Duplicate the content to create a seamless loop
+        // carousel.innerHTML += carousel.innerHTML;
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                if (!isUserInteracting) {
+                    let maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+                    if (carousel.scrollLeft >= maxScrollLeft ) {
+                         // Duplicate the content to create a seamless loop
+                        carousel.innerHTML += carousel.innerHTML;
+                        resumeAutoScroll();
+                        // carousel.scrollLeft += 10; // Reset scroll position
+                    } else {
+                        carousel.scrollLeft += 10; // Adjust this value for scroll speed
+                    }
+                }
+            }, 50); // Adjust the speed by changing the interval time
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        function resumeAutoScroll() {
+            isUserInteracting = false;
+            startAutoScroll();
+        }
+
+        function handleUserInteraction() {
+            isUserInteracting = true;
+            stopAutoScroll();
+            carousel.innerHTML = originalCarouselInnerHTML;
+        }
+
+        // Listen for user interactions
+        carousel.addEventListener('mousedown', handleUserInteraction);
+        carousel.addEventListener('touchstart', handleUserInteraction);
+        carousel.addEventListener('wheel', handleUserInteraction);
+        
+        carousalPaginationSection.addEventListener('click', () => { 
+            handleUserInteraction();
+            setTimeout(resumeAutoScroll, 3000);
+        });
+        scrollRightDesktop.addEventListener('click', () => {
+            handleUserInteraction();
+            setTimeout(resumeAutoScroll, 3000);
+        });
+        scrollLeftDesktop.addEventListener('click', () => {
+            handleUserInteraction();
+            setTimeout(resumeAutoScroll, 3000);
+        });
+        scrollRightMobile.addEventListener('click', () => {
+            handleUserInteraction();
+            setTimeout(resumeAutoScroll, 3000);
+        });
+        scrollLeftMobile.addEventListener('click', () => {
+            handleUserInteraction();
+            setTimeout(resumeAutoScroll, 3000);
+        });
+
+        // Resume auto-scroll after user interaction ends
+        carousel.addEventListener('mouseup', () => setTimeout(resumeAutoScroll, 3000));
+        carousel.addEventListener('touchend', () => setTimeout(resumeAutoScroll, 3000));
+        carousel.addEventListener('mouseleave', () => setTimeout(resumeAutoScroll, 3000));
+
+        startAutoScroll();
+
     </script>
 </body>
 
