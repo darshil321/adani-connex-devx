@@ -358,7 +358,7 @@
     text-align: left;
     color: #565656;
     margin: 0px;
-    margin-top: 1vh;
+    margin-top: 2rem;
 }
 
 .pioneering-safety-section .know-more {
@@ -482,6 +482,7 @@
     font-size: 34.5px;
     font-weight: 400;
     line-height: 45px;
+    font-family: "Roboto";
     text-align: left;
     margin: 0px;
     padding-right: 15px;
@@ -586,6 +587,7 @@
 
 .recognition-section .carousel-wrapper {
     display: flex;
+    font-family: "Roboto";
     align-items: center;
     /* Vertical alignment */
     /* justify-content: space-between; Space between the text and controls */
@@ -593,11 +595,14 @@
 }
 
 .recognition-section .carousel-wrapper p {
+    font-family: "Roboto";
+    max-width: 960px;
     padding-right: 15px;
     padding-left: 15px;
 }
 
 .recognition-section .carousel-controls-des {
+    font-family: "Roboto";
     padding-left: 10vw;
     display: flex;
     align-items: center;
@@ -610,15 +615,18 @@
 
 .recognition-section .control-left,
 .recognition-section .control-right {
-    height: 4.5vh;
-    width: 2.4vw;
+    height: 2.4rem;
+    width: 2.4rem;
+    text-align: center;
     background-color: #2F93FF;
     color: white;
     border: none;
     cursor: pointer;
+    line-height: 0%;
     border-radius: 50%;
     box-shadow: 0px 2px 7.3px 0px #00000038;
     font-size: 25px;
+    text-align: center;
 }
 
 .recognition-section .controls-disabled {
@@ -1556,8 +1564,8 @@
 }
 
 .testimonial-section .profile-icon {
-    width: 3vw;
-    height: 5vh;
+    width: 2.5rem;
+    height: 3rem;
     margin-right: 10px;
     background-color: inherit;
 }
@@ -1569,16 +1577,16 @@
 }
 
 .testimonial-section .name {
-    font-size: 16px;
-    color: #333;
+    font-size: 22px;
+    color: #000;
     margin: 0px !important;
     font-weight: bold;
     line-height: normal
 }
 
 .testimonial-section .title {
-    font-size: 14px;
-    color: #666;
+    font-size: 16.5px;
+    color: #000;
     margin: 0px !important;
     line-height: normal
 }
