@@ -89,232 +89,122 @@
         </div>
     </div>
 
+
+
+
     <script>
-        var carousel = document.getElementsByClassName('carousel')[0];
-        var clientWidth = carousel.clientWidth;
-        var currWidth = carousel.scrollLeft + clientWidth;
-        var caraousalWidth = carousel.scrollWidth;
-        var scrollRightDesktop = document.getElementsByClassName('control-right')?.[0];
-        var scrollLeftDesktop = document.getElementsByClassName('control-left')?.[0];
-        var scrollRightMobile = document.getElementsByClassName('control-right')?.[1];
-        var scrollLeftMobile = document.getElementsByClassName('control-left')?.[1];
+    var carousel = document.getElementsByClassName('carousel')[0];
+    var clientWidth = carousel.clientWidth;
+    var carouselWidth = carousel.scrollWidth;
+    var scrollRightDesktop = document.querySelector('.carousel-controls-des .control-right');
+    var scrollLeftDesktop = document.querySelector('.carousel-controls-des .control-left');
+    var scrollRightMobile = document.querySelector('.carousel-controls-mb .control-right');
+    var scrollLeftMobile = document.querySelector('.carousel-controls-mb .control-left');
 
-        var noOfCarousalDots = 4;
-        
-        if (Math.floor(caraousalWidth / clientWidth) == caraousalWidth / clientWidth) {
-            noOfCarousalDots = caraousalWidth / clientWidth;
-        } else {
-            noOfCarousalDots = Math.floor(caraousalWidth / clientWidth) + 1;
-        }
+    var scrollByPixel = clientWidth;
+    var currentIndex = 0;
+    var autoScrollSpeed = 2000; // 2 seconds
+    var intervalId;
+    var debounceTimeout;
 
-        for (var i = 0; i < noOfCarousalDots; i++) {
+    function cloneSlides() {
+        const slides = document.querySelectorAll('.carousel .card');
+        slides.forEach((slide, index) => {
+            const clone = slide.cloneNode(true);
+            clone.classList.add('clone');
+            carousel.appendChild(clone);
+        });
+    }
+
+    function createPagination() {
+        var noOfCarouselDots = Math.ceil(carouselWidth / clientWidth);
+        var paginationContainer = document.getElementsByClassName('carousel-pagination')[0];
+        for (var i = 0; i < noOfCarouselDots; i++) {
             var dot = document.createElement('span');
             dot.classList.add('dot');
+            dot.classList.add(i.toString());
             if (i == 0) {
                 dot.classList.add('active');
             }
-            document.getElementsByClassName('carousel-pagination')[0].appendChild(dot);
+            paginationContainer.appendChild(dot);
         }
+    }
 
-        // var scrollByPixel = (caraousal.scrollWidth - window.innerWidth + 405 - 40)/4; // 405 is the width of the card and some padding, 40 is the margin from both sides // TEMP_FIX
-        var scrollByPixel = carousel.scrollWidth / noOfCarousalDots;
+    function updateButtonStates() {
+        scrollLeftDesktop.classList.toggle('controls-disabled', currentIndex <= 0);
+        scrollLeftMobile.classList.toggle('controls-disabled', currentIndex <= 0);
+        scrollRightDesktop.classList.toggle('controls-disabled', currentIndex >= noOfCarouselDots() - 1);
+        scrollRightMobile.classList.toggle('controls-disabled', currentIndex >= noOfCarouselDots() - 1);
+    }
 
-        if (currWidth >= caraousalWidth) {
-            scrollRightDesktop.classList.add('controls-disabled');
-        }
-        if (currWidth <= clientWidth) {
-            scrollLeftDesktop.classList.add('controls-disabled');
-        }
+    function updateActiveDot() {
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === (currentIndex % noOfCarouselDots()));
+        });
+    }
 
-        if (currWidth <= clientWidth) {
-            scrollLeftMobile.classList.add('controls-disabled');
-        }
-        if (currWidth >= caraousalWidth) {
-            scrollRightMobile.classList.add('controls-disabled');
-        }
+    function smoothScroll(direction) {
+        clearInterval(intervalId); // Stop the auto-scroll when user interacts
+        currentIndex = (currentIndex + direction + noOfCarouselDots()) % noOfCarouselDots();
+        carousel.scrollTo({
+            left: currentIndex * scrollByPixel,
+            behavior: 'smooth'
+        });
+        updateButtonStates();
+        updateActiveDot();
+        startAutoScroll(); // Restart the auto-scroll
+    }
 
-        // When a user clicks on the right arrow, the ul will scroll 750px to the right
-        scrollRightDesktop.addEventListener('click', (event) => {
+    function moveDots(event) {
+        clearInterval(intervalId); // Stop the auto-scroll when user interacts
+        currentIndex = parseInt(event.target.classList[1]);
+        carousel.scrollTo({
+            left: currentIndex * scrollByPixel,
+            behavior: 'smooth'
+        });
+        updateButtonStates();
+        updateActiveDot();
+        startAutoScroll(); // Restart the auto-scroll
+    }
 
-            carousel.scrollBy(scrollByPixel, 0);
+    function noOfCarouselDots() {
+        return Math.ceil(carousel.scrollWidth / clientWidth) / 2; // Account for cloned slides
+    }
 
-            var clientWidth = carousel.clientWidth;
-            var currWidth = carousel.scrollLeft + clientWidth + scrollByPixel;
-            var caraousalWidth = carousel.scrollWidth;
-
-            if (scrollLeftDesktop.classList.contains('controls-disabled')) {
-                scrollLeftDesktop.classList.remove('controls-disabled');
+    function handleScroll() {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+            let scrollPosition = carousel.scrollLeft;
+            let maxScroll = carousel.scrollWidth / 2 - clientWidth; // Account for cloned slides
+            if (scrollPosition >= maxScroll) {
+                carousel.scrollLeft = 0;
             }
+            currentIndex = Math.round(carousel.scrollLeft / scrollByPixel);
+            updateButtonStates();
+            updateActiveDot();
+        }, 50);
+    }
 
-            if (currWidth >= caraousalWidth) {
-                scrollRightDesktop.classList.add('controls-disabled');
-            }
-        });
+    function startAutoScroll() {
+        intervalId = setInterval(() => {
+            smoothScroll(1);
+        }, autoScrollSpeed);
+    }
 
-        // When a user clicks on the left arrow, the ul will scroll 750px to the left
-        scrollLeftDesktop.addEventListener('click', (event) => {
+    // Initialize
+    cloneSlides();
+    createPagination();
+    updateButtonStates();
+    updateActiveDot();
+    startAutoScroll();
 
-            carousel.scrollBy(-scrollByPixel, 0);
-
-            var clientWidth = carousel.clientWidth;
-            var currWidth = carousel.scrollLeft + clientWidth - scrollByPixel;
-            var caraousalWidth = carousel.scrollWidth;
-
-            if (scrollRightDesktop.classList.contains('controls-disabled')) {
-                scrollRightDesktop.classList.remove('controls-disabled');
-            }
-
-            if (currWidth <= clientWidth) {
-                scrollLeftDesktop.classList.add('controls-disabled');
-            }
-        });
-
-        // When a user clicks on the right arrow, the ul will scroll 750px to the right
-        scrollRightMobile.addEventListener('click', (event) => {
-
-            carousel.scrollBy(scrollByPixel, 0);
-
-            var clientWidth = carousel.clientWidth;
-            var currWidth = carousel.scrollLeft + clientWidth + scrollByPixel;
-            var caraousalWidth = carousel.scrollWidth;
-
-            if (scrollLeftMobile.classList.contains('controls-disabled')) {
-                scrollLeftMobile.classList.remove('controls-disabled');
-            }
-
-            if (currWidth >= caraousalWidth) {
-                scrollRightMobile.classList.add('controls-disabled');
-            }
-        });
-
-        // When a user clicks on the left arrow, the ul will scroll 750px to the left
-        scrollLeftMobile.addEventListener('click', (event) => {
-
-            carousel.scrollBy(-scrollByPixel, 0);
-
-            var clientWidth = carousel.clientWidth;
-            var currWidth = carousel.scrollLeft + clientWidth - scrollByPixel;
-            var caraousalWidth = carousel.scrollWidth;
-
-            if (scrollRightMobile.classList.contains('controls-disabled')) {
-                scrollRightMobile.classList.remove('controls-disabled');
-            }
-
-            if (currWidth <= clientWidth) {
-                scrollLeftMobile.classList.add('controls-disabled');
-            }
-        });
+    [scrollRightDesktop, scrollRightMobile].forEach(btn => btn.addEventListener('click', () => smoothScroll(1)));
+    [scrollLeftDesktop, scrollLeftMobile].forEach(btn => btn.addEventListener('click', () => smoothScroll(-1)));
+    document.querySelectorAll('.dot').forEach(dot => dot.addEventListener('click', moveDots));
+    carousel.addEventListener('scroll', handleScroll);
 
 
-        var dots = document.getElementsByClassName('dot');
-        for (var i = 0; i < dots.length; i++) {
-            var currentDot = dots[i];
-            currentDot.classList.add(`${i}`);
-
-            currentDot.addEventListener('click', function (ele) {
-                var dotPosition = 0;
-                var caraousalWidth = carousel.scrollWidth;
-
-                parseInt(ele.srcElement.classList.forEach((className) => {
-                    if (!isNaN(parseInt(className))) {
-                        dotPosition = parseInt(className);
-                    }
-                }));
-
-                var scrolledBy = scrollByPixel * dotPosition;
-
-                for (var j = 0; j < dots.length; j++) {
-                    dots[j].classList.remove('active');
-                }
-
-                ele.target.classList.add('active');
-
-                carousel.scrollTo(scrolledBy, 0);
-
-                if (scrolledBy >= caraousalWidth) {
-                    scrollRightDesktop.classList.add('controls-disabled');
-                    scrollRightMobile.classList.add('controls-disabled');
-                }
-
-            });
-        }
-
-
-        // auto scroll effect
-
-        let isUserInteracting = false;
-        let autoScrollInterval;
-        let carousalPaginationSection = document.getElementsByClassName('carousel-pagination')[0];
-        let originalCarouselInnerHTML = carousel.innerHTML;
-
-        // // Duplicate the content to create a seamless loop
-        // carousel.innerHTML += carousel.innerHTML;
-
-        function startAutoScroll() {
-            autoScrollInterval = setInterval(() => {
-                if (!isUserInteracting) {
-                    let maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-                    if (carousel.scrollLeft >= maxScrollLeft ) {
-                         // Duplicate the content to create a seamless loop
-                        carousel.innerHTML += carousel.innerHTML;
-                        resumeAutoScroll();
-                        // carousel.scrollLeft += 10; // Reset scroll position
-                    } else {
-                        carousel.scrollLeft += 10; // Adjust this value for scroll speed
-                    }
-                }
-            }, 50); // Adjust the speed by changing the interval time
-        }
-
-        function stopAutoScroll() {
-            clearInterval(autoScrollInterval);
-        }
-
-        function resumeAutoScroll() {
-            isUserInteracting = false;
-            startAutoScroll();
-        }
-
-        function handleUserInteraction() {
-            isUserInteracting = true;
-            stopAutoScroll();
-            carousel.innerHTML = originalCarouselInnerHTML;
-        }
-
-        // Listen for user interactions
-        carousel.addEventListener('mousedown', handleUserInteraction);
-        carousel.addEventListener('touchstart', handleUserInteraction);
-        carousel.addEventListener('wheel', handleUserInteraction);
-        
-        carousalPaginationSection.addEventListener('click', () => { 
-            handleUserInteraction();
-            setTimeout(resumeAutoScroll, 3000);
-        });
-        scrollRightDesktop.addEventListener('click', () => {
-            handleUserInteraction();
-            setTimeout(resumeAutoScroll, 3000);
-        });
-        scrollLeftDesktop.addEventListener('click', () => {
-            handleUserInteraction();
-            setTimeout(resumeAutoScroll, 3000);
-        });
-        scrollRightMobile.addEventListener('click', () => {
-            handleUserInteraction();
-            setTimeout(resumeAutoScroll, 3000);
-        });
-        scrollLeftMobile.addEventListener('click', () => {
-            handleUserInteraction();
-            setTimeout(resumeAutoScroll, 3000);
-        });
-
-        // Resume auto-scroll after user interaction ends
-        carousel.addEventListener('mouseup', () => setTimeout(resumeAutoScroll, 3000));
-        carousel.addEventListener('touchend', () => setTimeout(resumeAutoScroll, 3000));
-        carousel.addEventListener('mouseleave', () => setTimeout(resumeAutoScroll, 3000));
-
-        startAutoScroll();
-
-    </script>
+</script>
 </body>
 
 </html>
