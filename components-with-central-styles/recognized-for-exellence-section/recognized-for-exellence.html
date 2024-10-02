@@ -32,7 +32,7 @@
       justify-content: space-between;
       height: 420px; 
       width: 483px; 
-      margin-right: -50px;
+      
     }
     .owl-carousel .card-image {
       text-align: center;
@@ -107,6 +107,34 @@
       background: #cccccc;
       cursor: default;
     }
+    @media (max-width:768px) {
+      .recognition-section-text {
+        font-size: 12px;
+        width: 320px; 
+      }
+      .owl-carousel .card {
+        height: auto; /* Auto height for cards */
+        width:100% ; 
+        margin-top: 30px; 
+      }
+      .owl-carousel .card-content h3 {
+        font-size: 14px;
+      }
+      .owl-carousel .card-content p {
+        font-size: 12px;
+      }
+      .custom-nav {
+        top: 600px;
+        left: 150px; /* Adjust positioning */
+      }
+      .custom-nav button {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+      .owl-dot { 
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -163,13 +191,13 @@
         </div>
         <div class="card">
           <div class="card-image">
-            <img src="./../../assets/recognize-section-award-img-2.svg" alt="W. Media-Global Award" />
+            <img src="./../../assets/image 11.png" alt="W. Media-Global Award" style="height:240px;" />
           </div>
           <div class="card-content">
             <span>Certification</span>
-            <h3>Digital Technology Inside the Data Center Award for EdgeOS</h3>
+            <h3>Digital Technology Inside the Data Center Award by W. Media-Global</h3>
             <p>
-              We're honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global for our efforts with EdgeOS!
+              We’re honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global for our efficient implementation of EdgeOS!
             </p>
             <a href="#" class="know-more">Know more</a>
           </div>
@@ -188,16 +216,20 @@
     $(document).ready(function() {
       var owl = $('.owl-carousel').owlCarousel({
         loop: true,
-        margin: 500, // Increase this value to increase the gap between cards
+        margin: 400, // Increase this value to increase the gap between cards
         nav: false, // Disable default navigation
         dots: true,
         dotsEach: true,
         autoplay: true,
         autoplayTimeout: 3000,
         responsive: {
-          0: { items: 1 },
-          600: { items: 2 },
-          1000: { items: 3}
+          0: { items: 1,
+            dots:false
+           },
+          600: { items: 2,
+            dots:false
+           },
+          1000: { items: 3 }
         }
       });
 
@@ -210,23 +242,7 @@
         owl.trigger('next.owl.carousel');
       });
 
-      function updateArrowColors(event) {
-        if (event.item.index === 0) {
-          $('.custom-prev').addClass('disabled');
-          $('.custom-next').removeClass('disabled');
-        } else if (event.item.index === event.item.count - event.page.size) {
-          $('.custom-prev').removeClass('disabled');
-          $('.custom-next').addClass('disabled');
-        } else {
-          $('.custom-prev, .custom-next').removeClass('disabled');
-        }
-      }
-
-      // Bind the function to carousel events
-      owl.on('changed.owl.carousel', updateArrowColors);
-      
-      // Initial call to set correct colors on page load
-      owl.on('initialized.owl.carousel', updateArrowColors);
+     
     });
   </script>
 </body>
