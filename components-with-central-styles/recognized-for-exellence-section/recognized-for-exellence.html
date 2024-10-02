@@ -1,206 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Scalable Solutions to Power Your Growth</title> -->
-    <link rel="stylesheet" href="./../components-central-styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Custom styles for equal card heights and spacing */
+    .recognition-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+    .recognition-section-text { 
+      width: 966px; 
+      height: 46px;  
+      color: #4D4D4D;
+    }
+    .owl-carousel .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 420px; 
+      width: 483px; 
+    }
+    .owl-carousel .card-image {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .owl-carousel .card-image img {
+      max-width: 100%;
+      height: auto;
+    }
+    .owl-carousel .card-content {
+      flex-grow: 1;
+    }
+    .owl-carousel .card-content h3 {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+    .owl-carousel .card-content p {
+      font-size: 14px;
+      color: #666;
+    }
+    .owl-carousel .card .know-more {
+      display: inline-block;
+      margin-top: 15px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .owl-carousel .card .know-more:hover {
+      text-decoration: underline;
+    }
+    .owl-dots {
+      text-align: center;
+      margin-top: 50px; 
+    }
+    .owl-dot {
+      display: inline-block !important;
+      zoom: 1;
+    }
+    .owl-dot span {
+      width: 10px;
+      height: 10px;
+      margin: 5px 7px;
+      display: block;
+      -webkit-backface-visibility: visible;
+      transition: opacity .2s ease;
+      border-radius: 30px;
+    }
+    .owl-dot.active span,
+    .owl-dot:hover span {
+      background: #2f8a6a;
+    }
+    /* Custom Arrows */
+    .custom-nav {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      display: flex;
+    }
+    .custom-nav button {
+      background: #007bff;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border: none;
+      border-radius: 100%;
+      margin-left: 10px;
+    }
+    .custom-nav button.disabled {
+      background: #cccccc;
+      cursor: default;
+    }
+  </style>
 </head>
-
 <body>
-
-    <div class="recognition-section">
-        <h2>Recognised for Excellence</h2>
-        <div class="carousel-wrapper">
-            <p class="recognition-section-text">Chennai 1 data center stands as a testament to the dedication to pioneering advancements in sustainable
-                digital infrastructure. This commitment extends beyond innovation as evidenced by various certifications
-                and
-                industry recognition.</p>
-            <div class="carousel-controls-des">
-                <button class="control-left">‹</button>
-                <button class="control-right">›</button>
-            </div>
-        </div>
-        <div class="carousel">
-            <div class="card">
-                <div class="card-image">
-                    <img src="./../../assets/recognize-section-award-img-1.svg" alt="Tech Capital Global Awards">
-                </div>
-                <div class="card-content">
-                    <span>Certification</span>
-                    <h3>Digital Infrastructure Project of the Year at Tech Capital Global Awards 2023</h3>
-                    <p>Chennai 1, our flagship data center, has once again achieved remarkable international acclaim by
-                        the</p>
-                    <a href="#" class="know-more">Know more</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="./../../assets/recognize-section-award-img-2.svg" alt="CIO Choice Award">
-                </div>
-                <div class="card-content">
-                    <span>Certification</span>
-                    <h3>CIO Choice – Best Integrated Data Center Solution Provider</h3>
-                    <p>This prestigious recognition is an acknowledgement of our commitment to promote innovation and
-                        excellence in our product/service offerings</p>
-                    <a href="#" class="know-more">Know more</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="./../../assets/recognize-section-award-img-2.svg" alt="W. Media-Global Award">
-                </div>
-                <div class="card-content">
-                    <span>Certification</span>
-                    <h3>Digital Technology Inside the Data Center Award for EdgeOS</h3>
-                    <p>We’re honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global
-                        for our efforts with EdgeOS!</p>
-                    <a href="#" class="know-more">Know more</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="./../../assets/recognize-section-award-img-2.svg" alt="W. Media-Global Award">
-                </div>
-                <div class="card-content">
-                    <span>Certification</span>
-                    <h3>Digital Technology Inside the Data Center Award for EdgeOS</h3>
-                    <p>We’re honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global
-                        for our efforts with EdgeOS!</p>
-                    <a href="#" class="know-more">Know more</a>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-pagination">
-            <!-- <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span> -->
-        </div>
-        <div class="carousel-controls-mb">
-            <button class="control-left">‹</button>
-            <button class="control-right">›</button>
-        </div>
+  <div class="recognition-section">
+    <h2>Recognised for Excellence</h2>
+    <div class="carousel-wrapper">
+      <p class="recognition-section-text">
+        Chennai 1 data center stands as a testament to the dedication to
+        pioneering advancements in sustainable digital infrastructure. This
+        commitment extends beyond innovation as evidenced by various
+        certifications and industry recognition.
+      </p>
     </div>
+    <div class="carousel slider">
+      <div class="owl-carousel owl-theme">
+        <div class="card">
+          <div class="card-image">
+            <img src="./../../assets/recognize-section-award-img-1.svg" alt="Tech Capital Global Awards" />
+          </div>
+          <div class="card-content">
+            <span>Certification</span>
+            <h3>Digital Infrastructure Project of the Year at Tech Capital Global Awards 2023</h3>
+            <p>
+              Chennai 1, our flagship data center, has once again achieved remarkable international acclaim by the
+            </p>
+            <a href="#" class="know-more">Know more</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="./../../assets/recognize-section-award-img-2.svg" alt="CIO Choice Award" />
+          </div>
+          <div class="card-content">
+            <span>Certification</span>
+            <h3>CIO Choice – Best Integrated Data Center Solution Provider</h3>
+            <p>
+              This prestigious recognition is an acknowledgement of our commitment to promote innovation and excellence in our product/service offerings.
+            </p>
+            <a href="#" class="know-more">Know more</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="./../../assets/recognize-section-award-img-2.svg" alt="W. Media-Global Award" />
+          </div>
+          <div class="card-content">
+            <span>Certification</span>
+            <h3>Digital Technology Inside the Data Center Award for EdgeOS</h3>
+            <p>
+              We're honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global for our efforts with EdgeOS!
+            </p>
+            <a href="#" class="know-more">Know more</a>
+          </div>
+        </div>
+      </div>
+      <div class="custom-nav">
+        <button class="custom-prev">‹</button>
+        <button class="custom-next">›</button>
+      </div>
+    </div>
+  </div>
 
-
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.carousel');
-    const cards = Array.from(carousel.children);
-    const cardWidth = cards[0].offsetWidth;
-    const cardsCount = cards.length;
-    const paginationContainer = document.querySelector('.carousel-pagination');
-
-
-    cards.forEach(card => {
-        const clone = card.cloneNode(true);
-        carousel.appendChild(clone);
-    });
-
-    let currentIndex = 0;
-    const totalWidth = cardWidth * cardsCount * 2;
-    carousel.style.width = `${totalWidth}px`;
-
-    function createPaginationDots() {
-        for (let i = 0; i < cardsCount; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            dot.dataset.index = i;
-            paginationContainer.appendChild(dot);
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function() {
+      var owl = $('.owl-carousel').owlCarousel({
+        loop: true ,
+        margin: 0,
+        nav: false, // Disable default navigation
+        dots: true,
+        dotsEach: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsive: {
+          0: { items: 1 },
+          600: { items: 2 },
+          1000: { items: 2 }
         }
-    }
+      });
 
-    function updateCarousel() {
-        const newPosition = -currentIndex * cardWidth;
-        carousel.style.transform = `translateX(${newPosition}px)`;
-        updateActiveDot();
-    }
+      // Custom Navigation Events
+      $('.custom-prev').click(function() {
+        owl.trigger('prev.owl.carousel');
+      });
 
-    function updateActiveDot() {
-        const activeDotIndex = currentIndex % cardsCount;
-        document.querySelectorAll('.dot').forEach((dot, index) => {
-            dot.classList.toggle('active', index === activeDotIndex);
-        });
-    }
+      $('.custom-next').click(function() {
+        owl.trigger('next.owl.carousel');
+      });
 
-    function nextSlide() {
-        currentIndex++;
-        if (currentIndex >= cardsCount * 2) {
-            // Jump to the start without animation
-            currentIndex = cardsCount;
-            carousel.style.transition = 'none';
-            updateCarousel();
-            setTimeout(() => {
-                carousel.style.transition = 'transform 0.5s ease';
-                currentIndex++;
-                updateCarousel();
-            }, 10);
+      // Function to update arrow colors
+      function updateArrowColors(event) {
+        if (event.item.index === 0) {
+          $('.custom-prev').addClass('disabled');
+          $('.custom-next').removeClass('disabled');
+        } else if (event.item.index === event.item.count - event.page.size) {
+          $('.custom-prev').removeClass('disabled');
+          $('.custom-next').addClass('disabled');
         } else {
-            updateCarousel();
+          $('.custom-prev, .custom-next').removeClass('disabled');
         }
-    }
+      }
 
-    function prevSlide() {
-        currentIndex--;
-        if (currentIndex < 0) {
-            // Jump to the end without animation
-            currentIndex = cardsCount - 1;
-            carousel.style.transition = 'none';
-            updateCarousel();
-            setTimeout(() => {
-                carousel.style.transition = 'transform 0.5s ease';
-                currentIndex--;
-                updateCarousel();
-            }, 10);
-        } else {
-            updateCarousel();
-        }
-    }
-
-    function goToSlide(index) {
-        currentIndex = index;
-        updateCarousel();
-    }
-
-
-    const nextButtons = document.querySelectorAll('.control-right');
-    const prevButtons = document.querySelectorAll('.control-left');
-
-    nextButtons.forEach(button => button.addEventListener('click', nextSlide));
-    prevButtons.forEach(button => button.addEventListener('click', prevSlide));
-
-
-    createPaginationDots();
-    paginationContainer.addEventListener('click', (event) => {
-        if (event.target.classList.contains('dot')) {
-            const index = parseInt(event.target.dataset.index);
-            goToSlide(index);
-        }
+      // Bind the function to carousel events
+      owl.on('changed.owl.carousel', updateArrowColors);
+      
+      // Initial call to set correct colors on page load
+      owl.on('initialized.owl.carousel', updateArrowColors);
     });
-
-
-    let autoScrollInterval = setInterval(nextSlide, 2000);
-
-
-    carousel.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
-    carousel.addEventListener('mouseleave', () => {
-        autoScrollInterval = setInterval(nextSlide, 2000);
-    });
-
-
-    carousel.style.transition = 'transform 0.5s ease';
-    updateCarousel();
-});
-
-    </script>
+  </script>
 </body>
-
 </html>
