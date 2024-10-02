@@ -91,120 +91,116 @@
 
 
 
-
     <script>
-    var carousel = document.getElementsByClassName('carousel')[0];
-    var clientWidth = carousel.clientWidth;
-    var carouselWidth = carousel.scrollWidth;
-    var scrollRightDesktop = document.querySelector('.carousel-controls-des .control-right');
-    var scrollLeftDesktop = document.querySelector('.carousel-controls-des .control-left');
-    var scrollRightMobile = document.querySelector('.carousel-controls-mb .control-right');
-    var scrollLeftMobile = document.querySelector('.carousel-controls-mb .control-left');
+    document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.carousel');
+    const cards = Array.from(carousel.children);
+    const cardWidth = cards[0].offsetWidth;
+    const cardsCount = cards.length;
+    const paginationContainer = document.querySelector('.carousel-pagination');
 
-    var scrollByPixel = clientWidth;
-    var currentIndex = 0;
-    var autoScrollSpeed = 2000; // 2 seconds
-    var intervalId;
-    var debounceTimeout;
 
-    function cloneSlides() {
-        const slides = document.querySelectorAll('.carousel .card');
-        slides.forEach((slide, index) => {
-            const clone = slide.cloneNode(true);
-            clone.classList.add('clone');
-            carousel.appendChild(clone);
-        });
-    }
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        carousel.appendChild(clone);
+    });
 
-    function createPagination() {
-        var noOfCarouselDots = Math.ceil(carouselWidth / clientWidth);
-        var paginationContainer = document.getElementsByClassName('carousel-pagination')[0];
-        for (var i = 0; i < noOfCarouselDots; i++) {
-            var dot = document.createElement('span');
+    let currentIndex = 0;
+    const totalWidth = cardWidth * cardsCount * 2;
+    carousel.style.width = `${totalWidth}px`;
+
+    function createPaginationDots() {
+        for (let i = 0; i < cardsCount; i++) {
+            const dot = document.createElement('span');
             dot.classList.add('dot');
-            dot.classList.add(i.toString());
-            if (i == 0) {
-                dot.classList.add('active');
-            }
+            dot.dataset.index = i;
             paginationContainer.appendChild(dot);
         }
     }
 
-    function updateButtonStates() {
-        scrollLeftDesktop.classList.toggle('controls-disabled', currentIndex <= 0);
-        scrollLeftMobile.classList.toggle('controls-disabled', currentIndex <= 0);
-        scrollRightDesktop.classList.toggle('controls-disabled', currentIndex >= noOfCarouselDots() - 1);
-        scrollRightMobile.classList.toggle('controls-disabled', currentIndex >= noOfCarouselDots() - 1);
+    function updateCarousel() {
+        const newPosition = -currentIndex * cardWidth;
+        carousel.style.transform = `translateX(${newPosition}px)`;
+        updateActiveDot();
     }
 
     function updateActiveDot() {
+        const activeDotIndex = currentIndex % cardsCount;
         document.querySelectorAll('.dot').forEach((dot, index) => {
-            dot.classList.toggle('active', index === (currentIndex % noOfCarouselDots()));
+            dot.classList.toggle('active', index === activeDotIndex);
         });
     }
 
-    function smoothScroll(direction) {
-        clearInterval(intervalId); // Stop the auto-scroll when user interacts
-        currentIndex = (currentIndex + direction + noOfCarouselDots()) % noOfCarouselDots();
-        carousel.scrollTo({
-            left: currentIndex * scrollByPixel,
-            behavior: 'smooth'
-        });
-        updateButtonStates();
-        updateActiveDot();
-        startAutoScroll(); // Restart the auto-scroll
+    function nextSlide() {
+        currentIndex++;
+        if (currentIndex >= cardsCount * 2) {
+            // Jump to the start without animation
+            currentIndex = cardsCount;
+            carousel.style.transition = 'none';
+            updateCarousel();
+            setTimeout(() => {
+                carousel.style.transition = 'transform 0.5s ease';
+                currentIndex++;
+                updateCarousel();
+            }, 10);
+        } else {
+            updateCarousel();
+        }
     }
 
-    function moveDots(event) {
-        clearInterval(intervalId); // Stop the auto-scroll when user interacts
-        currentIndex = parseInt(event.target.classList[1]);
-        carousel.scrollTo({
-            left: currentIndex * scrollByPixel,
-            behavior: 'smooth'
-        });
-        updateButtonStates();
-        updateActiveDot();
-        startAutoScroll(); // Restart the auto-scroll
+    function prevSlide() {
+        currentIndex--;
+        if (currentIndex < 0) {
+            // Jump to the end without animation
+            currentIndex = cardsCount - 1;
+            carousel.style.transition = 'none';
+            updateCarousel();
+            setTimeout(() => {
+                carousel.style.transition = 'transform 0.5s ease';
+                currentIndex--;
+                updateCarousel();
+            }, 10);
+        } else {
+            updateCarousel();
+        }
     }
 
-    function noOfCarouselDots() {
-        return Math.ceil(carousel.scrollWidth / clientWidth) / 2; // Account for cloned slides
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
     }
 
-    function handleScroll() {
-        clearTimeout(debounceTimeout);
-        debounceTimeout = setTimeout(() => {
-            let scrollPosition = carousel.scrollLeft;
-            let maxScroll = carousel.scrollWidth / 2 - clientWidth; // Account for cloned slides
-            if (scrollPosition >= maxScroll) {
-                carousel.scrollLeft = 0;
-            }
-            currentIndex = Math.round(carousel.scrollLeft / scrollByPixel);
-            updateButtonStates();
-            updateActiveDot();
-        }, 50);
-    }
 
-    function startAutoScroll() {
-        intervalId = setInterval(() => {
-            smoothScroll(1);
-        }, autoScrollSpeed);
-    }
+    const nextButtons = document.querySelectorAll('.control-right');
+    const prevButtons = document.querySelectorAll('.control-left');
 
-    // Initialize
-    cloneSlides();
-    createPagination();
-    updateButtonStates();
-    updateActiveDot();
-    startAutoScroll();
-
-    [scrollRightDesktop, scrollRightMobile].forEach(btn => btn.addEventListener('click', () => smoothScroll(1)));
-    [scrollLeftDesktop, scrollLeftMobile].forEach(btn => btn.addEventListener('click', () => smoothScroll(-1)));
-    document.querySelectorAll('.dot').forEach(dot => dot.addEventListener('click', moveDots));
-    carousel.addEventListener('scroll', handleScroll);
+    nextButtons.forEach(button => button.addEventListener('click', nextSlide));
+    prevButtons.forEach(button => button.addEventListener('click', prevSlide));
 
 
-</script>
+    createPaginationDots();
+    paginationContainer.addEventListener('click', (event) => {
+        if (event.target.classList.contains('dot')) {
+            const index = parseInt(event.target.dataset.index);
+            goToSlide(index);
+        }
+    });
+
+
+    let autoScrollInterval = setInterval(nextSlide, 2000);
+
+
+    carousel.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+    carousel.addEventListener('mouseleave', () => {
+        autoScrollInterval = setInterval(nextSlide, 2000);
+    });
+
+
+    carousel.style.transition = 'transform 0.5s ease';
+    updateCarousel();
+});
+
+    </script>
 </body>
 
 </html>
