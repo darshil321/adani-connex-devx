@@ -32,6 +32,7 @@
       justify-content: space-between;
       height: 420px; 
       width: 483px; 
+      margin-right: -50px;
     }
     .owl-carousel .card-image {
       text-align: center;
@@ -160,6 +161,19 @@
             <a href="#" class="know-more">Know more</a>
           </div>
         </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="./../../assets/recognize-section-award-img-2.svg" alt="W. Media-Global Award" />
+          </div>
+          <div class="card-content">
+            <span>Certification</span>
+            <h3>Digital Technology Inside the Data Center Award for EdgeOS</h3>
+            <p>
+              We're honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global for our efforts with EdgeOS!
+            </p>
+            <a href="#" class="know-more">Know more</a>
+          </div>
+        </div>
       </div>
       <div class="custom-nav">
         <button class="custom-prev">‹</button>
@@ -173,8 +187,8 @@
   <script>
     $(document).ready(function() {
       var owl = $('.owl-carousel').owlCarousel({
-        loop: true ,
-        margin: 0,
+        loop: true,
+        margin: 500, // Increase this value to increase the gap between cards
         nav: false, // Disable default navigation
         dots: true,
         dotsEach: true,
@@ -183,7 +197,7 @@
         responsive: {
           0: { items: 1 },
           600: { items: 2 },
-          1000: { items: 2 }
+          1000: { items: 3}
         }
       });
 
@@ -196,7 +210,6 @@
         owl.trigger('next.owl.carousel');
       });
 
-      // Function to update arrow colors
       function updateArrowColors(event) {
         if (event.item.index === 0) {
           $('.custom-prev').addClass('disabled');
