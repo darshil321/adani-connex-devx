@@ -5,35 +5,47 @@
 
 .data-center-section {
     width: 100%;
-    max-width: 3000px;
-    margin: auto;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
     font-family: 'Roboto';
 }
 
 .data-center-section .video-container {
     position: relative;
-    width: -webkit-fill-available;
-    height: 390px;
-    /* Adjust based on the size you need
-    background: url('path_to_your_video_thumbnail.jpg') center center / cover no-repeat; */
-}
+    width: 100%;
+    height:auto ;
+    }
 
 .data-center-section .video-container iframe {
-    width: 70%;
+    width: 68%;
     height: 450px;
     border-radius: 20px;
     display: none;
 }
 
+ .video-slider-wrapper {
+    width: 100%;
+    height: auto;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 967px;
+ }
 
 .data-center-section .video-thumbnail  {
     width:100%;
-    height: 300px;
+    height:auto; 
+    object-fit: contain;
 }
 .data-center-section .video-thumbnail > .video-thumbnail-img{
-    width: 100% ; 
-    height: 470px ; 
+    width: 100%  ; 
+    height:auto  ; 
+    object-fit: contain ;
 }
 
 
@@ -74,14 +86,15 @@
 
 .data-center-section .info-slides {
     display: flex;
-    justify-content: center;
-    /* width: 90%; */
-    gap: 0.75vw;
-    margin-top: 85px;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 15px;
 }
 
 .data-center-section .info-slide {
-    width: 12.5vw;
+    width: 100%;
+    height: auto;
     position: relative;
 }
 
