@@ -9,13 +9,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    * {
-      font-family: 'Roboto', sans-serif;
+    body{
+      font-family: Roboto;
+      
+    }
+    .heading{ 
+      font-size:2rem ; 
+      margin-bottom: 12px ;
     }
     /* Custom styles for equal card heights and spacing */
     .recognition-section {
       max-width: 1200px;
-      margin: 0 auto;
+      margin:  auto;
       padding: 20px;
       position: relative;
     }
@@ -23,6 +28,10 @@
       width: 966px; 
       height: 46px;  
       color: #4D4D4D;
+      font-weight: 400px  ;
+      font-size:1rem ;  
+      margin-top:  1rem;
+      margin-bottom: 2rem ;
     }
     .owl-carousel .card {
       background-color: #fff;
@@ -33,16 +42,29 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 420px; 
+      height: 460px  ; 
       width: 483px; 
+    }
+    .certificate{ 
+      font-weight: 400 ;  
+      font-size: 15px; 
+      line-height: 1rem ;
+      
+    } 
+    .know-more{ 
+      font-weight: 600px ;
+      font-size : 15px ; 
+      line-height: 21px ; 
     }
     .owl-carousel .card-image {
       text-align: center;
       margin-bottom: 15px;
+     
     }
     .owl-carousel .card-image img {
       max-width: 100%;
       height: auto;
+      object-fit:contain ;
     }
     .owl-carousel .card-content {
       flex-grow: 1;
@@ -67,12 +89,14 @@
     }
     .owl-dots {
       text-align: center;
-      margin-top: 50px; 
+      margin-top: 60px; 
     }
     .owl-dot {
       display: inline-block !important;
       zoom: 1;
+
     }
+   
     .owl-dot span {
       width: 10px;
       height: 10px;
@@ -81,6 +105,17 @@
       -webkit-backface-visibility: visible;
       transition: opacity .2s ease;
       border-radius: 30px;
+    }
+    h3{ 
+      margin :12px 0  ; 
+      font-size:15px ; 
+      line-height: 21px;
+
+    }
+    .cardpara{
+      font-size:15px ;
+      font-weight: 400px; 
+      line-height: 21px;
     }
     .owl-dot.active span,
     .owl-dot:hover span {
@@ -112,13 +147,24 @@
     }
     @media (max-width:768px) {
       .recognition-section-text {
-        font-size: 12px;
+        margin-top:1.5rem ; 
+        font-size: 1rem ;
+        font-weight:400 ; 
+        line-height: 1.5rem;
         width: 320px; 
       }
+      .heading{ 
+        font-size: 30px ;
+        font-weight: 400;
+        line-height: 40px ;
+        width:300px; 
+      }
       .owl-carousel .card {
-        height: auto;
-        width: 100%;
-        margin-top: 30px; 
+        height: auto; /* Auto height for cards */
+        width:100% ; 
+        margin-top: 94px;
+        border-radius: 12px; 
+        margin-left:-10px;
       }
       .owl-carousel .card-content h3 {
         font-size: 14px;
@@ -136,6 +182,8 @@
         background: rgba(255, 255, 255, 0.9);
         padding: 10px;
         border-radius: 20px;
+        bottom: 40px;
+        left: 150px; 
       }
       .custom-nav button {
         width: 35px;
@@ -151,12 +199,16 @@
       .slider {
         position: relative;
       }
+      .owl-carousel .card .card-image{ 
+        margin: 0px;
+        padding: 0px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="recognition-section">
-    <h2>Recognised for Excellence</h2>
+    <h2 class="heading">Recognised for Excellence</h2>
     <div class="carousel-wrapper">
       <p class="recognition-section-text">
         Chennai 1 data center stands as a testament to the dedication to
@@ -172,9 +224,9 @@
             <img src="./../../assets/recognize-section-award-img-1.svg" alt="Tech Capital Global Awards" />
           </div>
           <div class="card-content">
-            <span>Certification</span>
+            <span  class="certificate">Certification</span>
             <h3>Digital Infrastructure Project of the Year at Tech Capital Global Awards 2023</h3>
-            <p>
+            <p class="cardpara">
               Chennai 1, our flagship data center, has once again achieved remarkable international acclaim by the
             </p>
             <a href="#" class="know-more">Know more</a>
@@ -185,9 +237,9 @@
             <img src="./../../assets/recognize-section-award-img-2.svg" alt="CIO Choice Award" />
           </div>
           <div class="card-content">
-            <span>Certification</span>
+            <span class="certificate">Certification</span>
             <h3>CIO Choice – Best Integrated Data Center Solution Provider</h3>
-            <p>
+            <p class="cardpara">
               This prestigious recognition is an acknowledgement of our commitment to promote innovation and excellence in our product/service offerings.
             </p>
             <a href="#" class="know-more">Know more</a>
@@ -198,9 +250,9 @@
             <img src="./../../assets/recognize-section-award-img-2.svg" alt="W. Media-Global Award" />
           </div>
           <div class="card-content">
-            <span>Certification</span>
+            <span  class="certificate">Certification</span>
             <h3>Digital Technology Inside the Data Center Award for EdgeOS</h3>
-            <p>
+            <p class="cardpara" >
               We're honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global for our efforts with EdgeOS!
             </p>
             <a href="#" class="know-more">Know more</a>
@@ -208,13 +260,13 @@
         </div>
         <div class="card">
           <div class="card-image">
-            <img src="./../../assets/image 11.png" alt="W. Media-Global Award" style="height:240px;" />
+            <img src="./../../assets/image11.png" alt="W. Media-Global Award"  />
           </div>
           <div class="card-content">
-            <span>Certification</span>
+            <span class="certificate">Certification</span>
             <h3>Digital Technology Inside the Data Center Award by W. Media-Global</h3>
-            <p>
-              We're honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global for our efficient implementation of EdgeOS!
+            <p class="cardpara">
+              We’re honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global for our efficient implementation of EdgeOS!
             </p>
             <a href="#" class="know-more">Know more</a>
           </div>
@@ -233,8 +285,8 @@
     $(document).ready(function() {
       var owl = $('.owl-carousel').owlCarousel({
         loop: true,
-        margin: 400,
-        nav: false,
+        margin: 400 , 
+        nav: false, 
         dots: true,
         dotsEach: true,
         autoplay: true,
@@ -243,6 +295,7 @@
           0: { 
             items: 1,
             margin: 80,
+            stagePadding: 10,
             dots: false
           },
           600: { 

@@ -52,7 +52,7 @@
 .data-center-section .play-button {
     position: absolute;
     top: 53%;
-    left: 47%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 100px;
     /* Size of the play button */
@@ -193,11 +193,20 @@
         object-fit: cover;
         border-radius: 20px;
     }
+    .para{ 
+        margin-bottom: 32px ;
+    }
 
     .data-center-section .video-container {
         height: auto;
     }
-
+    .data-center-section .data{ 
+        margin-left: 50px;
+        font-weight: 400px; 
+        font-size: 30px ;
+        font-weight: bold ;
+        width:308px; 
+    }
     .data-center-section .video-container iframe {
         width: 150px;
     }
@@ -227,6 +236,9 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 10px;
+    }
+    .info-slide-text{ 
+        margin-top: 10px ; ;
     }
 
     .data-center-section .info-slide {
@@ -259,13 +271,13 @@
     .data-center-section .video-thumbnail .video-thumbnail-img {
         width: 100%;
         object-fit: cover;
-        border-radius: 20px;
+        border-radius: 8px;
     }
 
     .data-center-section .video-thumbnail .video-thumbnail-img {
         width: 100%;
         object-fit: cover;
-        border-radius: 20px;
+        border-radius: 8px;
     }
 }
 
@@ -1091,6 +1103,8 @@
     height: 86vh;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+    height: 100%;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -1393,83 +1407,244 @@
     background-color: #0056b3;
 }
 
-@media (max-width: 430px) {
-    .scroll-animation-section{
+/* scroll animation section for mobile */
+
+@media (max-width: 768px) {
+    .scroll-animation-section {
         height: auto;
+        min-height: 100vh;
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        background-size: cover;
+        overflow-x: hidden;
     }
 
     .scroll-animation-section .title {
         max-width: 100%;
-        margin-bottom: 0px;
+        margin-bottom: 24px;
+        padding: 0 16px;
+    }
+
+    .scroll-animation-section .title .heading {
+        font-size: 28px;
+        line-height: 34px;
+        margin-bottom: 12px !important;
+    }
+
+    .scroll-animation-section .title .desc {
+        font-size: 14px;
+        line-height: 21px;
     }
 
     .scroll-animation-section .section-container {
         flex-direction: column;
-        padding-top: 0px;
+        padding: 0 16px;
+        width: 100%;
+        box-sizing: border-box;
+        gap: 10px;
     }
 
     .scroll-animation-section .sidebar {
         width: 100%;
         display: grid;
-        padding: 0%;
-        margin-bottom: 5vh;
         grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 0;
+        margin-bottom: 24px;
     }
 
     .scroll-animation-section .sidebar a {
-        font-size: 16px !important;
-        padding-right: 1.1vw;
-        padding-left: 1.1vw;
-        margin: 0px;
+        font-size: 14px !important;
+        padding: 12px 8px;
+        margin: 0;
         text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .scroll-animation-section .content {
-        height: 100vh;
+        width: 100%;
+        padding: 0;
+        height: auto;
+        min-height: 480px;
+        position: relative;
     }
 
     .scroll-animation-section .card {
-        flex-direction: column;
+        position: absolute;
         width: 100%;
         height: auto;
+        min-height: 480px;
+        padding: 16px;
+        margin: 0;
+        box-sizing: border-box;
+        flex-direction: column;
+        gap: 16px;
+        left: 0;
+        right: 0;
+    }
+
+    .scroll-animation-section .card picture {
+        width: 100%;
+        display: block;
     }
 
     .scroll-animation-section .card img {
-        height: 20vh;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .scroll-animation-section .card-content {
+        width: 100%;
+        gap: 16px;
+        padding: 0;
+    }
+
+    .scroll-animation-section .card-content h2 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .scroll-animation-section .card-content p {
+        font-size: 14px;
+        line-height: 21px;
+        margin-top: 8px;
+    }
+
+    .scroll-animation-section .card-content h3 {
+        font-size: 18px;
+        line-height: 24px;
+        margin-top: 16px;
+    }
+
+    .scroll-animation-section .key-advantages-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 12px;
+    }
+
+    .scroll-animation-section .card-content .key-advantages-grid li {
+        font-size: 14px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .scroll-animation-section .card-content .key-advantages-grid li img {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+    }
+
+    /* Animation adjustments for mobile */
+    .scroll-animation-section .card.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .scroll-animation-section .card.previous-1 {
+        transform: translateY(-15px) scale(0.98);
+    }
+
+    .scroll-animation-section .card.previous-2 {
+        transform: translateY(-30px) scale(0.96);
+    }
+
+    .scroll-animation-section .card.previous-3 {
+        transform: translateY(-45px) scale(0.94);
+    }
+
+    /* Reverse animations */
+    .scroll-animation-section .card.reverse-1 {
+        transform: translateY(15px) scale(0.98);
+    }
+
+    .scroll-animation-section .card.reverse-2 {
+        transform: translateY(30px) scale(0.96);
+    }
+
+    .scroll-animation-section .card.reverse-3 {
+        transform: translateY(45px) scale(0.94);
     }
 
     .scroll-animation-section .buttons {
         display: none;
     }
+}
 
-    .scroll-animation-section .card-content {
-        gap: 15px;
+/* Extra small devices */
+@media (max-width: 375px) {
+    .scroll-animation-section {
+        padding: 16px;
+    }
+
+    .scroll-animation-section .title {
+        padding: 0 8px;
+    }
+
+    .scroll-animation-section .title .heading {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .scroll-animation-section .section-container {
+        padding: 0 8px;
+    }
+
+    .scroll-animation-section .sidebar a {
+        font-size: 12px !important;
+        padding: 10px 6px;
+    }
+
+    .scroll-animation-section .card {
+        padding: 12px;
+    }
+
+    .scroll-animation-section .card img {
+        height: 160px;
+    }
+
+    .scroll-animation-section .card-content h2 {
+        font-size: 20px;
+        line-height: 24px;
     }
 
     .scroll-animation-section .card-content p {
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 18px;
-        text-align: left;
+        font-size: 13px;
+        line-height: 19px;
     }
 
-    .scroll-animation-section .card-content .key-advantages-grid {
-        width: auto;
+    .scroll-animation-section .card-content h3 {
+        font-size: 16px;
+        line-height: 22px;
     }
 
     .scroll-animation-section .card-content .key-advantages-grid li {
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 14.06px;
-        text-align: left;
-    }
-
-    .scroll-animation-section .card-content .key-advantages-grid li img {
-        width: 5vw;
+        font-size: 13px;
+        line-height: 18px;
     }
 }
 
+/* Landscape mode adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+    .scroll-animation-section .card {
+        min-height: auto;
+    }
 
+    .scroll-animation-section .card img {
+        height: 160px;
+    }
+
+    .scroll-animation-section .key-advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 /*
     Testimonial Section
