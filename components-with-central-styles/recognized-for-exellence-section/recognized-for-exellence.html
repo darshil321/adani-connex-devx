@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    * {
+      font-family: 'Roboto', sans-serif;
+    }
     /* Custom styles for equal card heights and spacing */
     .recognition-section {
       max-width: 1200px;
@@ -32,7 +35,6 @@
       justify-content: space-between;
       height: 420px; 
       width: 483px; 
-      
     }
     .owl-carousel .card-image {
       text-align: center;
@@ -90,6 +92,7 @@
       top: 60px;
       right: 0;
       display: flex;
+      z-index: 10;
     }
     .custom-nav button {
       background: #007bff;
@@ -113,8 +116,8 @@
         width: 320px; 
       }
       .owl-carousel .card {
-        height: auto; /* Auto height for cards */
-        width:100% ; 
+        height: auto;
+        width: 100%;
         margin-top: 30px; 
       }
       .owl-carousel .card-content h3 {
@@ -124,15 +127,29 @@
         font-size: 12px;
       }
       .custom-nav {
-        top: 600px;
-        left: 150px; /* Adjust positioning */
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        border-radius: 20px;
       }
       .custom-nav button {
-        padding: 6px 10px;
-        font-size: 12px;
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .owl-dot { 
-        display: none;
+        display: none !important;
+      }
+      .slider {
+        position: relative;
       }
     }
   </style>
@@ -197,7 +214,7 @@
             <span>Certification</span>
             <h3>Digital Technology Inside the Data Center Award by W. Media-Global</h3>
             <p>
-              We’re honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global for our efficient implementation of EdgeOS!
+              We're honored to receive the Digital Technology Inside the Data Center Award from W.Media-Global for our efficient implementation of EdgeOS!
             </p>
             <a href="#" class="know-more">Know more</a>
           </div>
@@ -216,33 +233,38 @@
     $(document).ready(function() {
       var owl = $('.owl-carousel').owlCarousel({
         loop: true,
-        margin: 400, // Increase this value to increase the gap between cards
-        nav: false, // Disable default navigation
+        margin: 400,
+        nav: false,
         dots: true,
         dotsEach: true,
         autoplay: true,
         autoplayTimeout: 3000,
         responsive: {
-          0: { items: 1,
-            dots:false
-           },
-          600: { items: 2,
-            dots:false
-           },
-          1000: { items: 3 }
+          0: { 
+            items: 1,
+            margin: 80,
+            dots: false
+          },
+          600: { 
+            items: 2,
+            margin: 20,
+            dots: false
+          },
+          1000: { 
+            items: 3,
+            margin: 400
+          }
         }
       });
 
       // Custom Navigation Events
       $('.custom-prev').click(function() {
-        owl.trigger('prev.owl.carousel');
+        owl.trigger('prev.owl.carousel', [300]);
       });
 
       $('.custom-next').click(function() {
-        owl.trigger('next.owl.carousel');
+        owl.trigger('next.owl.carousel', [300]);
       });
-
-     
     });
   </script>
 </body>
