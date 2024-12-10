@@ -193,8 +193,8 @@ video {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 80vh;
-  border-radius: 50px;
+  height: 30rem;
+  border-radius: 20px;
   color: #fff;
   cursor: pointer;
   flex: 0.5;
@@ -202,21 +202,73 @@ video {
   position: relative;
   -webkit-transition: all 700ms ease-in;
 }
-
-.panel h3 {
-  font-size: 24px;
+.panel h3{
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  margin: 0;
-  opacity: 1;
-}
-
-.panel.active {
-  flex: 5;
+  bottom:7rem;
+  left: 2.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .panel.active h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 9.5rem;
+  left: 3rem;
+  margin: 0;
+  opacity: 1;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.panel p{
+  opacity:0 ; 
+}
+.panel.active p { 
+  opacity:1 ; 
+  position:absolute;
+  bottom: 5.5rem;
+  left: 3rem;
+  font-size: 1rem;
+  font-weight: 400 ;
+  width:60%;
+}
+.panel button{
+  opacity:0 ; 
+}
+.panel.active button{
+  opacity:1 ; 
+  position:absolute;
+  bottom: 2rem;
+  left: 3rem;
+  background-color:  #2F93FF;
+  color:white ;   
+  border: none ;
+  padding:1rem;
+  border-radius: 1.5rem;
+  font-size: 0.85rem;
+}
+.panel img{
+  font-size: 24px;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 4.5rem;
+  margin: 0;
+  opacity: 1;
+}
+.panel.active img{
+  opacity:0 ;
+}
+
+.panel.active {
+  flex: 2;
+  
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+.panel.active p {
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
 }
@@ -268,6 +320,86 @@ video {
   border-radius: 20px;
 
 }
+.featuredtabs{
+  display:flex ; 
+  gap:3rem;
+  margin-top: 5rem;
+}
+/* Container for the entire section */
+.leader-speak-section {
+  margin: 20px;
+}
+
+/* Header styling */
+.leader-speak-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.leader-speak-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.toggle-arrows {
+  display: flex;
+  flex-direction: column; /* Arrange arrows vertically */
+  align-items: center; /* Center arrows */
+  gap: 5px; /* Space between arrows */
+}
+
+.toggle-arrows .arrow {
+  font-size: 20px; /* Adjust size */
+  font-weight: bold;
+  color: #333; /* Dark color */
+  transform: rotate(90deg); /* Rotate to make < vertical */
+  cursor: pointer;
+}
+
+/* Adjust for cards */
+.leader-speak {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-block {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  gap: 15px;
+}
+
+.image-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.content-info {
+  flex: 1;
+}
+
+.date {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
 
 @keyframes moveArrow {
   0% {
@@ -286,6 +418,7 @@ video {
 }
 .solutions{ 
   margin: 75px;
+  padding: 25px;
 }
 .energy-card {
   flex: 1;
@@ -387,7 +520,9 @@ video {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+.solutions-container{ 
+  background-color:#F3F3F3; 
+}
 .learn-more:hover {
   background-color: #2680e6;
 }
