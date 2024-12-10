@@ -1,0 +1,211 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+  
+  /* Leverage Section */
+  .leverage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+    gap: 150px;
+    flex-wrap: wrap; /* Allow items to wrap */
+  }
+  
+  .leverage-text {
+    width: 100%;
+    max-width: 555px;
+    flex: 1;
+  }
+  
+  .leverage-text h1 {
+    font-size: clamp(24px, 4vw, 40px); /* Responsive text size */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  
+  .leverage-para {
+    color: #4d4d4d;
+    font-size: clamp(14px, 1.5vw, 16px); /* Responsive text size */
+    line-height: 1.8;
+    font-weight: 400;
+    height: auto;
+  }
+  
+  .leverage-image {
+    width:50%; 
+    
+   
+  }
+  
+  .leverage-image img {
+    width: 50%;
+    height: auto;
+    object-fit: cover; /* Ensure the image maintains its aspect ratio */
+    margin-left:30%;
+  }
+  
+  /* Success Section */
+  .success {
+    margin: 25px 95px;
+  }
+  
+  .success p {
+    color: #4d4d4d;
+    font-size: clamp(14px, 1.5vw, 16px); /* Responsive text */
+  }
+  
+  .success-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .success-cards img {
+    width: 100%;
+    height: auto; /* Allow images to scale naturally */
+    object-fit: cover; /* Ensure the image fits the container without distortion */
+  }
+  
+  /* Text inside cards */
+  .success-card1,
+  .success-card2 {
+    position: relative;
+  }
+  
+  .success-card1 p,
+  .success-card2 p {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    color: white;
+    font-weight: 700;
+    font-size: clamp(14px, 2vw, 20px); /* Responsive font size */
+    flex-shrink: none;
+}
+  
+.video-container {
+    width: 100%;
+    height:100%;
+    max-height:545px;  /* Reduce height of the container */
+    overflow: hidden;
+    position: relative;
+  }
+  .leftbtn{ 
+    background-color: #2F93FF;
+    padding:10px 24px 10px 24px; 
+    border-radius: 89px;
+    color:white;
+    border-color:#2F93FF;
+    margin-right:10px;
+  }
+  .rightbtn {
+  padding: 10px 24px; /* Adjust padding for size */
+  border-radius: 50px; /* Pill-shaped button */
+  background-color: transparent; /* Transparent background */
+  border: 1px solid white; /* White border */
+  color: white; /* White text */
+  font-size: 14px; /* Adjust text size */
+  font-weight: 600; /* Make the text bold */
+  text-align: center; /* Center the text */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+  .video-container .navigate {
+    color: white;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-weight: 400;
+    font-size: clamp(14px, 2vw, 20px); /* Responsive font size */
+  }
+  
+  video {
+    width: 100%;
+    height: 100%; /* Fill the height of the container */
+    object-fit: cover; /* Ensure the video covers the container proportionally */
+  }
+  .video-bottom{
+    position:absolute ; 
+    top:40%;
+    left:5%;
+    color:white;
+    width:30%;
+  }
+  .component {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.body-text {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+.control{ 
+  margin:25px 85px; 
+}
+.control h1{ 
+  font-weight: 700;
+  font-size: 40px;
+}
+.dotted-line {
+    border-top: 2px dotted #666;
+    margin: 20px 0;
+}
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .leverage {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .success-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .leverage-text h1 {
+      font-size: clamp(20px, 3vw, 32px); /* Further reduce font size */
+    }
+  
+    .leverage-para {
+      font-size: clamp(12px, 1.2vw, 14px);
+    }
+  
+    .success-cards {
+      grid-template-columns: 1fr; /* Single-column layout on small screens */
+    }
+  
+    .video-container {
+      max-height: 300px;
+    }
+  }
+  
