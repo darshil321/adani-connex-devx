@@ -808,7 +808,7 @@ video {
   text-align: center; /* Center title text */
 }
 .progress{
-  margin: 15px;
+  margin: 2rem;
 }
 .energy-description {
   font-size: 0.9rem;
@@ -960,13 +960,26 @@ height: 20rem;
 @media (max-width: 768px) {
   .content {
     grid-template-columns: 1fr; /* Single column layout */
-    height:155rem;
+    height:115rem;
   }
-
+  .main-image{
+    max-height: 30rem;
+  }
+  .header-actions{
+    display: none;
+  }
+  .header p{
+    display: none;
+  }
+  .image-container{
+    max-height: 400rem;
+    border: none;
+  }
 
   .features {
     grid-template-columns: 1fr;
   }
+
 }
 
 
@@ -1068,11 +1081,58 @@ height: 20rem;
   object-fit: contain; /* Changed from contain to cover for better image display */
   border-radius: 1rem;
 }
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 20rem;
+  }
+
+  .hero-image {
+    min-width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+@media (max-width: 640px) {
+  
+
+  @media (max-width: 640px) {
+    .hero {
+      margin-top: -10rem;
+    }
+  
+    .hero-image {
+      position: relative;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 2/4; /* Adjust ratio to fit your desired proportions */
+      overflow: hidden;
+      border-radius: 1rem; /* Adds rounded corners */
+    }
+  
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Crops the image */
+      object-position: center; /* Centers the focus area */
+      border-radius: 1rem;
+    }
+  }
+  
+}
+
 
 .safety {
   background-color: var(--background-light);
 }
-
+.safety-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin: 1rem;
+  padding: 0 1rem;
+}
 .safety-section {
   margin: 15px 75px;
   padding: 2rem;
@@ -1103,7 +1163,13 @@ height: 20rem;
   justify-content: center;
   
 }
-
+.safety-card p {
+  font-size: 1rem;
+  color: var(--text-gray);
+  margin: 0 1rem 1rem;
+  padding: 0 1rem;
+  line-height: 1.5;
+}
 .safety-card {
   background: var(--white);
   border-radius: 10px;
@@ -1115,6 +1181,121 @@ height: 20rem;
 
 
 
+ @media (max-width: 1024px) {
+  
+.safety {
+  background-color: var(--background-light);
+}
+.safety-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  
+}
+
+
+.safety-header {
+  
+  margin-bottom: 2rem;
+}
+
+.safety-header h1 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.safety-header p {
+  font-size: 1rem;
+  color: var(--text-gray);
+  max-width: 800px;
+  
+}
+
+.safety-cards {
+  display: flex;
+  gap: 5rem; /* Reduced from 10rem for better responsiveness */
+  
+  
+}
+.safety-card p {
+  font-size: 1rem;
+  color: var(--text-gray);
+  
+  padding: 0 1rem;
+  line-height: 1.5;
+}
+.safety-card {
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 40rem;
+  text-align: left;
+ }
+
+
+
+}
+
+@media (max-width: 640px) {
+  
+ 
+  .safety-header h1 {
+    font-size: 1.5rem; /* Smaller font size for titles */
+    margin-bottom: 1rem;
+  }
+
+  .safety-header p {
+    font-size: 0.9rem; /* Smaller font size for the description */
+    line-height: 1.4; /* Improved readability */
+    max-width: 100%; /* Full width */
+  }
+
+  .safety-cards {
+    display: flex;
+    flex-direction: column; /* Stack the cards vertically */
+    gap: 1.5rem; /* Adjust spacing between cards */
+    align-items: center; /* Center-align the cards */
+  }
+
+  .safety-card {
+    width: 100%; /* Full width on mobile */
+    max-width:55rem;   
+          
+  }
+  .card-image {
+    position: relative;
+    width: 100%;
+
+  }
+
+  .safety-card h3 {
+    font-size: 1rem; /* Smaller font for card titles */
+    margin: 0.5rem 0;
+  }
+
+  .safety-card p {
+    font-size: 0.9rem; /* Smaller font for card descriptions */
+    padding: 0; /* Remove padding */
+  }
+  .play-button {
+    position: absolute;
+    top: 20%; /* Center vertically */
+    right: 10rem; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact center alignment */
+    background-color: var(--primary-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    z-index: 10; /* Ensures the button appears above other elements */
+  }
+  
+  
+}
 .card-image {
   position: relative;
   width: 100%;
@@ -1151,20 +1332,9 @@ height: 20rem;
   color: var(--white);
 }
 
-.safety-card h3 {
-  font-size: 1.2rem;
-  color: var(--text-dark);
-  margin: 1rem;
-  padding: 0 1rem;
-}
 
-.safety-card p {
-  font-size: 1rem;
-  color: var(--text-gray);
-  margin: 0 1rem 1rem;
-  padding: 0 1rem;
-  line-height: 1.5;
-}
+
+
 .background-container {
   width: 100vw;
   height: 80vh;
@@ -1212,6 +1382,45 @@ height: 20rem;
   padding:0.5rem;
 
 }
+
+@media (max-width:700px){
+    .background-image{
+      width:100%;
+      height:100%;
+      border-radius: 0;
+    } 
+    .text-overlay{
+      display: flex;
+      align-items: left;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      padding: 30px;
+    }
+    .text-overlay h1{
+      font-weight: 700; 
+      font-size: 2rem;
+    }
+    .text-overlay p{
+      margin-top: -10px;
+      width:75% ; 
+      font-size:1rem;
+      font-weight: 400;
+    }
+    .text-overlay button{
+      width:15rem ;
+      margin-top: 10px;
+      background-color: white;
+      color:#2F93FF;
+      border-radius: 20rem;
+      padding:0.5rem;
+      font-weight: 700;
+      border: none;
+    
+    }
+
+}
+
 .featuredtabs {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1371,32 +1580,13 @@ height: 20rem;
   .image-container p{
     display: block;
   }
+  .featuredtabs{
+    display: flex;
+    flex-direction: column;
+  }
 }
 /* Responsive Adjustments */
-@media (max-width: 1024px) {
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
 
-  .hero-image {
-    min-width: 100%;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero {
-    padding: 1rem;
-  }
-
-  .hero-content {
-    padding: 1rem 0;
-  }
-
-  .hero-image {
-    min-height: 300px;
-  }
-}
 
 
 /* Media Queries for Responsiveness */
