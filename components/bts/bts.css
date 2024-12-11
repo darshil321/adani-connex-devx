@@ -282,10 +282,7 @@ video {
   margin: 15px 75px; /* Restored margin */
 }
 
-.arrow { 
-  position: absolute; 
-  top: 20%; 
-}
+
 
 .container1 {
   position: relative;
@@ -300,7 +297,7 @@ video {
   background-size: 20px 100%;
 }
 
-.arrow {
+/* .arrow {
   position: absolute;
   top: 50%;
   left: 0;
@@ -311,7 +308,7 @@ video {
   border-left: 20px solid #000;
   transform: translateY(-50%);
   animation: moveArrow 3s linear infinite;
-}
+} */
 
 .energy {
   height: 100%; 
@@ -347,9 +344,11 @@ video {
 
 .toggle-arrows {
   display: flex;
-  flex-direction: column; /* Arrange arrows vertically */
+  flex-direction: row;
+  flex-direction: row-reverse; /* Arrange arrows vertically */
   align-items: center; /* Center arrows */
   gap: 5px; /* Space between arrows */
+  
 }
 
 .toggle-arrows .arrow {
@@ -358,6 +357,7 @@ video {
   color: #333; /* Dark color */
   transform: rotate(90deg); /* Rotate to make < vertical */
   cursor: pointer;
+  color:#2F93FF ;   
 }
 
 /* Adjust for cards */
