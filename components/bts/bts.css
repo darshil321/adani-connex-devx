@@ -183,7 +183,7 @@ body {
   width: 3px; /* Adjust width for the "border" */
   height: 100%;
   background: linear-gradient(180deg, #027BFE 0%, #C46FBD 100%);
-  border-radius: 8px 0 0 8px; /* Matches the parent element's border-radius */
+  border-radius: 8px ; /* Matches the parent element's border-radius */
   z-index: 1; /* Ensures it sits beneath other content */
 }
 
@@ -201,6 +201,8 @@ body {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-radius: 1rem;
+  
 }
 
 .success-card1 p,
@@ -232,7 +234,7 @@ body {
   }
   
   .success-card1, .success-card2, .success-card3, .success-card4, .success-card5, .success-card6 {
-    width: 90%; /* Increase width */
+    width: 100%; /* Increase width */
    
   }
   
@@ -277,15 +279,17 @@ video {
 
 .leftbtn { 
   background-color: #2F93FF;
-  padding: 1rem 2.4rem; /* Use rem for consistency */
-  border-radius: 50px;
+  padding: 1rem 1rem; /* Use rem for consistency */
+  border-radius: 2rem;
   color: white;
   border-color: #2F93FF;
   margin-right: 1rem;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .rightbtn {
-  padding: 1rem 2.4rem; /* Use rem for consistency */
+  padding: 1rem 1rem; /* Use rem for consistency */
   border-radius: 50px;
   background-color: transparent;
   border: 1px solid white;
@@ -295,6 +299,8 @@ video {
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  width:100%;
+  flex-wrap: nowrap;
 }
 
 /* Responsive navigation label */
@@ -304,13 +310,17 @@ video {
   top: 5%;
   left: 5%;
   font-weight: 400;
-  font-size: clamp(14px, 2vw, 20px); /* Responsive font size */
+ 
 }
 
 video {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensure the video covers the container proportionally */
+}
+.navigate-arrow{ 
+  font-size: 0.85rem;
+ 
 }
 
 /* Positioning the text box and bottom elements */
@@ -324,8 +334,8 @@ video {
 
 .down-arrow { 
   position: absolute; 
-  top: 90%;
-  left: 140%;
+  bottom: 0%;
+  left: 50%;
 }
 
 .videocontact button {
@@ -374,7 +384,7 @@ video {
   }
   .down-arrow{
     position: absolute;
-    bottom:50%;
+    bottom:5%;
     left:50%;
   }
 
@@ -458,8 +468,45 @@ video {
   top:10px;
 }
 
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+  
 
-@media screen and (max-width: 1024px) {
+.control h1 { 
+  font-weight: 700;
+  font-size: 2rem ; 
+  width:100%;
+}
+.control img{
+  opacity:0 ; 
+  display:none ; 
+}
+.control p{ 
+  font-weight:400 ;
+  font-size:1rem; 
+  color: #4D4D4D;
+  font-size:1rem;
+  font-weight: 400 ; 
+}
+.svgs{ 
+  display:flex ; 
+  flex-direction: row-reverse;
+
+  
+  position:relative ; 
+  opacity: 1 ;
+  margin-top: 15%;
+}
+.svgs .svg1{ 
+  position:absolute ; 
+  top:-20px; 
+  left:19rem;
+}
+.svgs .svg2{ 
+  position: absolute; 
+  left:20rem;
+}
+}
+@media screen and (max-width: 800px) {
  
 .control{
   margin:15% 5% ;
@@ -483,7 +530,8 @@ video {
 .svgs{ 
   display:flex ; 
   flex-direction: row-reverse;
-  margin-left:10%;
+  margin:10%;
+  
   position:relative ; 
   opacity: 1 ;
   margin-top: 15%;
@@ -528,6 +576,7 @@ video {
   margin: 10px;
   position: relative;
   -webkit-transition: all 700ms ease-in;
+  overflow: hidden;
 }
 .panel::before {
   content: "";
@@ -688,7 +737,9 @@ video {
     color: white;
     cursor: pointer;
     -webkit-transition: all 700ms ease-in;
+    
   }
+ 
 
   .panel::before {
     content: "";
@@ -903,7 +954,8 @@ video {
   flex-direction: column;
   align-items: center; /* Center the content */
   justify-content: center; /* Center content vertically */
-}
+  border-left: 2px solid blue; /* ... existing styles ... */
+  }
 
 
 
@@ -1221,22 +1273,18 @@ height: 20rem;
 
   @media (max-width: 640px) {
     .hero {
-      margin-top: -10rem;
-      padding:-10rem;
+      margin-top: -3rem;   
+      padding:0;
 
     }
     progress{
-      margin:-200px;
+      padding:0;
     }
     .hero-content {
       padding: 0px;
+    }
     .hero-image {
-      position: relative;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 2/4; /* Adjust ratio to fit your desired proportions */
-      overflow: hidden;
-      border-radius: 1rem; /* Adds rounded corners */
+      4  
     }
   
     .hero-image img {
